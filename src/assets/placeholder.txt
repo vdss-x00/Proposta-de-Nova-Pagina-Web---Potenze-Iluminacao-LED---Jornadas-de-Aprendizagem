@@ -1,0 +1,2 @@
+*esse arquivo está aqui somente para a pasta "assets" não ser ignorada pelo git. quando for mexer no projeto, 
+adicione uma imagem que vai ser usada no projeto e delete esse arquivo*
