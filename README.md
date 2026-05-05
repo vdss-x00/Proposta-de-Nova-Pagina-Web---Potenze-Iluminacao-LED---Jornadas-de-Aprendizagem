@@ -11,7 +11,7 @@ Esse projeto foi desenvolvido como parte do objetivo da disciplina de Jornadas d
 ## Colaboradores
 - [Gustavo Henrique]()
 - [João Lucas]()
-- [Nicolas Oliveira](https://github.com/Nicolas-Oliveira543)
+- [Nicolas Oliveira (Nicolas-Oliveira543)](https://github.com/Nicolas-Oliveira543)
 - [Rafael Mateus]()
 - [Vitor Santos - Eu (vdss-x00)](https://github.com/vdss-x00)
 
