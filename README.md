@@ -9,7 +9,7 @@ Esse projeto foi desenvolvido como parte do objetivo da disciplina de Jornadas d
 
 
 ## Colaboradores
-- [Gustavo Henrique]()
+- [Gustavo Poyer (GustavoPoyer)](https://github.com/GustavoPoyer)
 - [João Lucas]()
 - [Nicolas Oliveira (Nicolas-Oliveira543)](https://github.com/Nicolas-Oliveira543)
 - [Rafael Mateus]()
