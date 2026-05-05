@@ -10,9 +10,9 @@ Esse projeto foi desenvolvido como parte do objetivo da disciplina de Jornadas d
 
 ## Colaboradores
 - [Gustavo Poyer (GustavoPoyer)](https://github.com/GustavoPoyer)
-- [João Lucas]()
+- [João Lucas (jao462)](https://github.com/jao462)
 - [Nicolas Oliveira (Nicolas-Oliveira543)](https://github.com/Nicolas-Oliveira543)
-- [Rafael Mateus]()
+- [Rafael Mateus (LayatoLyn)](https://github.com/LayatoLyn)
 - [Vitor Santos - Eu (vdss-x00)](https://github.com/vdss-x00)
 
 ## Contexto
