@@ -1,4 +1,4 @@
-function Grid() {
+function Orcamento() {
     return (
         <>
             {/*Código vai aqui*/}
@@ -6,4 +6,4 @@ function Grid() {
     );
 }
 
-export default Grid
+export default Orcamento
