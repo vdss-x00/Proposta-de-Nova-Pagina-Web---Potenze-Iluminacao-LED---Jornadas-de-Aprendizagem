@@ -1,3 +1,8 @@
+import Carrinho from './paginas/Carrinho.jsx' 
+import Orcamento from './paginas/Orcamento.jsx'
+import Produtos from './paginas/Produtos.jsx'
+import Sobre from './paginas/Sobre.jsx'
+import Contato from './paginas/Contato.jsx'
 import highBay from './assets/high_bay.png'
 import highBayModular from './assets/high_bay_modular.png'
 import linearIp66 from './assets/linear_ip66.png'
@@ -10,6 +15,7 @@ import luminariaPublica from './assets/luminaria_publica.png'
 import refletorUltra from './assets/refletor_ultra.png'
 import backgroundHero from './assets/Background.svg'
 import lampadaHero from './assets/Desenho de lampada.svg'
+import { Routes, Route, Link } from 'react-router-dom'
 
 const parceirosRaw = import.meta.glob('./assets/empresas/*.png', {
   eager: true,
@@ -98,24 +104,26 @@ function App() {
           />
 
           <nav className="hidden items-center gap-8 text-lg font-medium md:flex">
-            <a href="#produtos" className="flex items-center gap-1">
+            <Link to="/produtos" className="flex items-center gap-1">
               Produtos
               <span className="mt-1 inline-block h-0 w-0 border-l-[7px] border-r-[7px] border-t-[8px] border-l-transparent border-r-transparent border-t-red-800" />
-            </a>
-            <a href="#sobre">Sobre</a>
-            <a href="#orcamento">Orcamento</a>
-            <a href="#contato">Contato</a>
+            </Link>
+            <Link to="/sobre">Sobre</Link>
+            <Link to="/orcamento">Orçamento</Link>
+            <Link to="/contato">Contato</Link>
           </nav>
 
           <div className="hidden items-center gap-6 md:flex">
-            <button className="relative text-zinc-900" aria-label="Carrinho">
-              <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.8">
-                <circle cx="9" cy="20" r="1.6" />
-                <circle cx="18" cy="20" r="1.6" />
-                <path d="M2 3h3l2.2 10h11l2-7.2H6.1" />
-              </svg>
-              <span className="absolute -right-1 -top-1 text-sm font-semibold text-red-700">o</span>
-            </button>
+            <Link to="/carrinho">
+              <button className="relative text-zinc-900" aria-label="Carrinho">
+                <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.8">
+                  <circle cx="9" cy="20" r="1.6" />
+                  <circle cx="18" cy="20" r="1.6" />
+                  <path d="M2 3h3l2.2 10h11l2-7.2H6.1" />
+                </svg>
+                <span className="absolute -right-1 -top-1 text-sm font-semibold text-red-700">o</span>
+              </button>
+            </Link>
 
             <div className="flex items-center gap-3 text-lg">
               <span>Tema:</span>
@@ -296,6 +304,14 @@ function App() {
           </div>
         </div>
       </footer>
+
+      <Routes>
+        <Route path="/produtos" element={<Produtos />}/>
+        <Route path="/sobre" element={<Sobre />}/>
+        <Route path="/orcamento" element={<Orcamento />}/>
+        <Route path="/carrinho" element={<Carrinho />}/>
+        <Route path="/contato" element={<Contato />}/>
+      </Routes>
     </div>
   )
 }
