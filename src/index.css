@@ -25,3 +25,21 @@
 .animate-marquee-reverse {
   animation: marquee-right 32s linear infinite;
 }
+
+.link-anim::after{
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #8f1a22;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.link-anim:hover::after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}

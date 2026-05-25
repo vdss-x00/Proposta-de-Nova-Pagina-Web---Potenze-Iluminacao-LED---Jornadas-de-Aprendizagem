@@ -11,13 +11,13 @@ function Header(){
           />
 
           <nav className="hidden items-center gap-8 text-lg font-medium md:flex">
-            <Link to="/produtos" className="flex items-center gap-1">
+            <Link to="/produtos" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim">
               Produtos
-              <span className="mt-1 inline-block h-0 w-0 border-l-[7px] border-r-[7px] border-t-[8px] border-l-transparent border-r-transparent border-t-red-800" />
+              <span className="mt-1 inline-block h-0 w-0 border-l-[7px] border-r-[7px] border-t-8 border-l-transparent border-r-transparent border-t-red-800" />
             </Link>
-            <Link to="/sobre">Sobre</Link>
-            <Link to="/orcamento">Orçamento</Link>
-            <Link to="/contato">Contato</Link>
+            <Link to="/sobre" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim">Sobre</Link>
+            <Link to="/orcamento" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim">Orçamento</Link>
+            <Link to="/contato" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim">Contato</Link>
           </nav>
 
           <div className="hidden items-center gap-6 md:flex">
@@ -43,7 +43,7 @@ function Header(){
                   <path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" />
                 </svg>
               </button>
-              <span className="mt-1 inline-block h-0 w-0 border-l-[6px] border-r-[6px] border-t-[8px] border-l-transparent border-r-transparent border-t-black" />
+              <span className="mt-1 inline-block h-0 w-0 border-l-[6px] border-r-[6px] border-t-8 border-l-transparent border-r-transparent border-t-black" />
             </div>
           </div>
         </div>
