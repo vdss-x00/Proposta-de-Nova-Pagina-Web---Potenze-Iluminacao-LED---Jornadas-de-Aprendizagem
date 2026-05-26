@@ -43,3 +43,52 @@
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+@keyframes expandLine {
+  0% {
+    transform: scaleX(0);
+    width: 100%; 
+  }
+  50% {
+    transform: scaleX(1);
+    width: 100%; 
+  }
+  100% {
+    transform: scaleX(1);
+    width: 200px; 
+  }
+}
+
+
+.link-produtos::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #8f1a22;
+  transform: scaleX(0);
+  transform-origin: bottom left;
+  transition: transform 0.25s ease-out, width 0s 0.25s; 
+}
+
+.group:hover .link-produtos::after {
+  animation: expandLine 0.9s forwards ease-in-out;
+}
+
+.anim-hov {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  transition: all 0.3s ease;
+  transition-delay: 0s;
+}
+
+.group:hover .anim-hov {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 900ms; 
+}
