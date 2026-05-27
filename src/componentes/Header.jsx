@@ -17,13 +17,13 @@ function Header(){
                 Produtos
                 <span className="mt-1 inline-block h-0 w-0 border-l-[7px] border-r-[7px] border-t-8 border-l-transparent border-r-transparent border-t-red-800" />
               </Link>
-                <div class="flex flex-col w-50 anim-hov">
-                  <a href="#" class="bg-[#d9d9d9] border-t-[#8f1a22]  hover:bg-[#320d0a] hover:text-white">High Bay</a>
-                  <a href="#" class="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white">Refletores</a>
-                  <a href="#" class="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white">EX</a>
-                  <a href="#" class="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white">Industriais</a>
-                  <a href="#" class="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white">Iluminação Pública</a>
-                  <a href="#" class="bg-[#d9d9d9] border-b-[#8f1a22] border-b-2 hover:bg-[#320d0a] hover:text-white">Lineares</a>
+                <div className="flex flex-col w-50 anim-hov">
+                  <a href="#" classname="bg-[#d9d9d9] border-t-[#8f1a22]  hover:bg-[#320d0a] hover:text-white">High Bay</a>
+                  <a href="#" className="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white">Refletores</a>
+                  <a href="#" className="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white">EX</a>
+                  <a href="#" className="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white">Industriais</a>
+                  <a href="#" className="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white">Iluminação Pública</a>
+                  <a href="#" className="bg-[#d9d9d9] border-b-[#8f1a22] border-b-2 hover:bg-[#320d0a] hover:text-white">Lineares</a>
                 </div>
             </div>
             <Link to="/sobre" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim dark:text-[#fffafa]">Sobre</Link>
