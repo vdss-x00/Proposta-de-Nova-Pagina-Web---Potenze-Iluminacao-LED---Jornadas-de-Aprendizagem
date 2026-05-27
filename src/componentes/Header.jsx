@@ -5,7 +5,6 @@ function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-white/10 border-b border-white/10 flex items-center justify-between dark:bg-black/50">
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-6 md:px-6">
-        
         <Link to="/" className="cursor-pointer">
           <img
             src="/LOGO-SF.png"
@@ -107,6 +106,11 @@ function Header() {
 
           <ThemeDropdown />
         </div>
+        <button className="hidden max-[782px]:block text-zinc-900 dark:text-[#fffafa]" aria-label="Menu">
+          <svg xmlns="http://www.w3.org/2000/svg" height="40px" viewBox="0 -960 960 960" width="40px" fill="currentColor">
+            <path d="M120-240v-66.67h720V-240H120Zm0-206.67v-66.66h720v66.66H120Zm0-206.66V-720h720v66.67H120Z"/>
+          </svg>
+        </button>
       </div>
     </header>
   );
