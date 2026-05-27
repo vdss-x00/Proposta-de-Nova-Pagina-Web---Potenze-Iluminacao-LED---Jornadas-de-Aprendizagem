@@ -5,7 +5,6 @@ import EX from "../assets/luminaria_ex.png";
 import Industriais from "../assets/luminaria_industrial.png";
 import IlumPubli from "../assets/luminaria_publica.png";
 import Lineares from "../assets/linear_ip69k.png";
-import Header from "../componentes/Header";
 
 function Produtos() {
   const [activeIndex, setActiveIndex] = useState(null);
@@ -21,7 +20,6 @@ function Produtos() {
 
   return (
     <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
-      <Header />
 
       <h2 className="text-2xl font-bold mb-10 mt-20 ml-10 dark:text-[#fffafa]">
         Categorias
