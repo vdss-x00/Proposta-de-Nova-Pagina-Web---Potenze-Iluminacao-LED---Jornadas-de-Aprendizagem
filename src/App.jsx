@@ -103,12 +103,13 @@ function App() {
       <Header />
       
       <main>
-        <section className="relative overflow-hidden w-full bg-[#000]  max-w-[1200px] mx-auto h-[450px]">
-          <div className="flex w-[600%] h-full animate-slide">
+      <section className="relative overflow-hidden w-full bg-black max-w-[1400px] mx-auto h-[70vh] md:h-[85vh] rounded-2xl">
+         <div className="flex w-[600%] h-full animate-slide relative">
+           <div className="absolute inset-0 bg-black/40 z-10"></div>
             <div className="w-1/6 h-full flex-shrink-0">
               <img 
                 src={potenze_1} 
-                className="w-full h-full object-cover" 
+              className="w-full h-full object-cover scale-105 hover:scale-110 transition-all duration-[4000ms]"
                 alt="Potenze 1"
               />
             </div>
