@@ -216,6 +216,40 @@ function App() {
             ))}
           </div>
         </section>
+
+        <section className="bg-black text-white py-24 px-6">
+
+  <div className="mx-auto max-w-6xl grid md:grid-cols-2 gap-16 items-center">
+
+    <div>
+      <h2 className="text-5xl font-bold mb-8">
+        Sobre a Potenze
+      </h2>
+
+      <p className="text-zinc-300 text-lg leading-relaxed">
+        A Potenze atua no mercado de iluminação LED oferecendo soluções
+        modernas, eficientes e sofisticadas para ambientes residenciais,
+        comerciais e corporativos.
+      </p>
+
+      <p className="text-zinc-400 mt-6 leading-relaxed">
+        Com foco em inovação e qualidade, buscamos transformar espaços
+        através da tecnologia e do design.
+      </p>
+    </div>
+
+    <div>
+      <img
+        src={backgroundHero}
+        alt="Potenze LED"
+        className="rounded-3xl shadow-2xl object-cover w-full h-full"
+      />
+    </div>
+
+  </div>
+
+</section>
+        
       </main>
 
       <footer
