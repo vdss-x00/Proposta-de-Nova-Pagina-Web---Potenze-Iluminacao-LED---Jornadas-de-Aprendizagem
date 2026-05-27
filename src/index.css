@@ -119,3 +119,12 @@
 .animate-progress {
   animation: progress 7s linear infinite;
 }
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  overflow-x: hidden;
+  background: #000;
+}
