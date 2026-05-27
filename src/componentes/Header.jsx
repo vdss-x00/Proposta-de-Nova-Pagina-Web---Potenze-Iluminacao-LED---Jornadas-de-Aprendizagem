@@ -5,11 +5,14 @@ function Header(){
     return (
         <header className="bg-zinc-200 dark:bg-[#292828]">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-6 md:px-6">
-          <img
-            src="/LOGO-SF.png"
-            alt="Potenze Iluminacao LED"
-            className="h-10 w-auto lg:h-12"
-          />
+
+          <Link to="/" className="cursor-pointer">
+              <img
+                src="/LOGO-SF.png"
+                alt="Potenze Iluminacao LED"
+                className="h-10 w-auto lg:h-12"
+              />
+          </Link>
 
           <nav className="hidden items-center gap-8 text-lg font-medium md:flex">
             <div className="relative inline-block group z-50">
