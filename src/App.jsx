@@ -103,38 +103,38 @@ function App() {
       <Header />
       
       <main>
-        <section class="relative overflow-hidden w-full bg-[#000]  max-w-[1200px] mx-auto h-[450px]">
-          <div class="flex w-[600%] h-full animate-slide">
-            <div class="w-1/6 h-full flex-shrink-0">
+        <section className="relative overflow-hidden w-full bg-[#000]  max-w-[1200px] mx-auto h-[450px]">
+          <div className="flex w-[600%] h-full animate-slide">
+            <div className="w-1/6 h-full flex-shrink-0">
               <img 
                 src={potenze_1} 
-                class="w-full h-full object-cover" 
+                className="w-full h-full object-cover" 
                 alt="Potenze 1"
               />
             </div>
 
-            <div class="w-1/6 h-full flex-shrink-0">
+            <div className="w-1/6 h-full flex-shrink-0">
               <img src={potenze_2} class="w-full h-full object-cover" alt="Potenze 2" />
             </div>
 
-            <div class="w-1/6 h-full flex-shrink-0">
+            <div className="w-1/6 h-full flex-shrink-0">
               <img src={potenze_3} class="w-full h-full object-cover" alt="Potenze 3" />
             </div>
 
-            <div class="w-1/6 h-full flex-shrink-0">
+            <div className="w-1/6 h-full flex-shrink-0">
               <img src={potenze_4} class="w-full h-full object-cover" alt="Potenze 4" />
             </div>
 
-            <div class="w-1/6 h-full flex-shrink-0">
+            <div className="w-1/6 h-full flex-shrink-0">
               <img src={potenze_5} class="w-full h-full object-cover" alt="Potenze 5" />
             </div>
 
-            <div class="w-1/6 h-full flex-shrink-0">
+            <div className="w-1/6 h-full flex-shrink-0">
               <img src={potenze_1} class="w-full h-full object-cover" alt="Potenze 1 Loop" />
             </div>
           </div>
 
-          <div class="absolute bottom-0 left-0 h-[5px] bg-[#9f1523] animate-progress"></div>
+          <div className="absolute bottom-0 left-0 h-[5px] bg-[#9f1523] animate-progress"></div>
         </section>
 
         <section id="produtos" className="mx-auto w-full max-w-7xl px-5 py-12 md:px-6">
