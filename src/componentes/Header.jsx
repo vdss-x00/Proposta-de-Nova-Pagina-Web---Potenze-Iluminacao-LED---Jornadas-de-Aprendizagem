@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
+import ThemeDropdown from './Tema.jsx'
 
 function Header(){
     return (
-        <header className="bg-zinc-100">
+        <header className="bg-zinc-200 dark:bg-[#292828]">
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-5 py-6 md:px-6">
           <img
             src="/LOGO-SF.png"
@@ -11,8 +12,8 @@ function Header(){
           />
 
           <nav className="hidden items-center gap-8 text-lg font-medium md:flex">
-            <div className="relative inline-block group">
-              <Link to="/produtos" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-produtos">
+            <div className="relative inline-block group z-50">
+              <Link to="/produtos" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-produtos dark:text-[#fffafa]">
                 Produtos
                 <span className="mt-1 inline-block h-0 w-0 border-l-[7px] border-r-[7px] border-t-8 border-l-transparent border-r-transparent border-t-red-800" />
               </Link>
@@ -25,14 +26,14 @@ function Header(){
                   <a href="#" class="bg-[#d9d9d9] border-b-[#8f1a22] border-b-2 hover:bg-[#320d0a] hover:text-white">Lineares</a>
                 </div>
             </div>
-            <Link to="/sobre" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim">Sobre</Link>
-            <Link to="/orcamento" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim">Orçamento</Link>
-            <Link to="/contato" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim">Contato</Link>
+            <Link to="/sobre" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim dark:text-[#fffafa]">Sobre</Link>
+            <Link to="/orcamento" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim dark:text-[#fffafa]">Orçamento</Link>
+            <Link to="/contato" className="flex items-center gap-1" className="mr-[10px] no-underline text-[#303030] inline-block relative link-anim dark:text-[#fffafa]">Contato</Link>
           </nav>
 
           <div className="hidden items-center gap-6 md:flex">
             <Link to="/carrinho">
-              <button className="relative text-zinc-900 cursor-pointer" aria-label="Carrinho">
+              <button className="relative text-zinc-900 cursor-pointer dark:text-[#fffafa]" aria-label="Carrinho">
                 <svg viewBox="0 0 24 24" className="h-8 w-8" fill="none" stroke="currentColor" strokeWidth="1.8">
                   <circle cx="9" cy="20" r="1.6" />
                   <circle cx="18" cy="20" r="1.6" />
@@ -42,19 +43,8 @@ function Header(){
               </button>
             </Link>
 
-            <div className="flex items-center gap-3 text-lg">
-              <span>Tema:</span>
-              <button
-                className="rounded-xl border border-zinc-500 px-2.5 py-1.5 text-zinc-900"
-                aria-label="Alternar tema"
-              >
-                <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none" stroke="currentColor" strokeWidth="1.8">
-                  <circle cx="12" cy="12" r="4" />
-                  <path d="M12 2v2.3M12 19.7V22M4.9 4.9l1.6 1.6M17.5 17.5l1.6 1.6M2 12h2.3M19.7 12H22M4.9 19.1l1.6-1.6M17.5 6.5l1.6-1.6" />
-                </svg>
-              </button>
-              <span className="mt-1 inline-block h-0 w-0 border-l-[6px] border-r-[6px] border-t-8 border-l-transparent border-r-transparent border-t-black" />
-            </div>
+            
+          <ThemeDropdown />
           </div>
         </div>
       </header>

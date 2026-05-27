@@ -15,7 +15,11 @@ import luminariaIndustrial from './assets/luminaria_industrial.png'
 import luminariaPublica from './assets/luminaria_publica.png'
 import refletorUltra from './assets/refletor_ultra.png'
 import backgroundHero from './assets/Background.svg'
-import lampadaHero from './assets/Desenho de lampada.svg'
+import potenze_1 from './assets/potenze_1.png'
+import potenze_2 from './assets/potenze_2.png'
+import potenze_3 from './assets/potenze_3.png'
+import potenze_4 from './assets/potenze_4.png'
+import potenze_5 from './assets/potenze_5.png'
 import { Routes, Route } from 'react-router-dom'
 
 const parceirosRaw = import.meta.glob('./assets/empresas/*.png', {
@@ -34,7 +38,7 @@ function chunkArray(items, chunkSize) {
 function App() {
   const ofertas = [
     {
-      nome: 'Luminaria Industrial',
+      nome: 'Luminária Industrial',
       detalhes: ['Potencia: 15W | 30W', 'Grau de Protecao: IP69K'],
       imagem: luminariaIndustrial,
     },
@@ -44,7 +48,7 @@ function App() {
       imagem: refletorUltra,
     },
     {
-      nome: 'Luminaria High Bay',
+      nome: 'Luminária High Bay',
       detalhes: ['Potencia: 100W | 150W | 200W', 'Grau de Protecao: IP67'],
       imagem: highBay,
     },
@@ -64,22 +68,22 @@ function App() {
       imagem: linearIp69k,
     },
     {
-      nome: 'Luminaria Deco',
+      nome: 'Luminária Deco',
       detalhes: ['Aplicacao: projetos arquitetonicos e decorativos', 'Consulte modelos e temperaturas de cor'],
       imagem: luminariaDeco,
     },
     {
-      nome: 'Luminaria Ex',
+      nome: 'Luminária Ex',
       detalhes: ['Aplicacao: areas classificadas', 'Consulte certificacoes e configuracoes'],
       imagem: luminariaEx,
     },
     {
-      nome: 'Luminaria Frigorifico',
+      nome: 'Luminária Frigorífico',
       detalhes: ['Aplicacao: camaras frias e frigorificos', 'Projetada para baixas temperaturas'],
       imagem: luminariaFrigorifico,
     },
     {
-      nome: 'Luminaria Publica',
+      nome: 'Luminária Pública',
       detalhes: ['Aplicacao: vias e areas externas', 'Consulte fotometria e opcoes de montagem'],
       imagem: luminariaPublica,
     },
@@ -95,44 +99,46 @@ function App() {
   const parceirosDesktop = chunkArray(parceiros, 9)
 
   return (
-    <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900">
+    <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030]">
       <Header />
       
       <main>
-        <section
-          className="overflow-hidden px-6 text-white"
-          style={{
-            backgroundColor: '#9f1523',
-            backgroundImage: `linear-gradient(rgba(159, 21, 35, 0.62), rgba(159, 21, 35, 0.62)), url(${backgroundHero})`,
-            backgroundRepeat: 'repeat-x',
-            backgroundPosition: 'center',
-            backgroundSize: '210px auto',
-          }}
-        >
-          <div className="mx-auto grid min-h-[260px] w-full max-w-6xl items-center gap-6 py-8 md:grid-cols-[1fr_auto_1fr] md:py-10">
-            <div className="text-center md:text-left">
-              <h1 className="text-5xl font-extrabold leading-none md:text-6xl">Uma Ideia Brilhante</h1>
-              <p className="mt-3 max-w-md text-3xl leading-tight md:text-4xl">
-                Referencia no mercado de iluminacao industrial por mais de uma decada.
-              </p>
+        <section class="relative overflow-hidden w-full bg-[#000]  max-w-[1200px] mx-auto h-[450px]">
+          <div class="flex w-[600%] h-full animate-slide">
+            <div class="w-1/6 h-full flex-shrink-0">
+              <img 
+                src={potenze_1} 
+                class="w-full h-full object-cover" 
+                alt="Potenze 1"
+              />
             </div>
 
-            <img
-              src={lampadaHero}
-              alt="Ilustracao de lampada"
-              className="mx-auto h-36 w-auto md:h-44"
-            />
+            <div class="w-1/6 h-full flex-shrink-0">
+              <img src={potenze_2} class="w-full h-full object-cover" alt="Potenze 2" />
+            </div>
 
-            <div className="flex justify-center md:justify-end">
-              <button className="rounded-2xl bg-white px-10 py-3 text-xl font-medium text-red-800 md:text-2xl">
-                Conheca mais
-              </button>
+            <div class="w-1/6 h-full flex-shrink-0">
+              <img src={potenze_3} class="w-full h-full object-cover" alt="Potenze 3" />
+            </div>
+
+            <div class="w-1/6 h-full flex-shrink-0">
+              <img src={potenze_4} class="w-full h-full object-cover" alt="Potenze 4" />
+            </div>
+
+            <div class="w-1/6 h-full flex-shrink-0">
+              <img src={potenze_5} class="w-full h-full object-cover" alt="Potenze 5" />
+            </div>
+
+            <div class="w-1/6 h-full flex-shrink-0">
+              <img src={potenze_1} class="w-full h-full object-cover" alt="Potenze 1 Loop" />
             </div>
           </div>
+
+          <div class="absolute bottom-0 left-0 h-[5px] bg-[#9f1523] animate-progress"></div>
         </section>
 
         <section id="produtos" className="mx-auto w-full max-w-7xl px-5 py-12 md:px-6">
-          <h2 className="mb-8 text-4xl font-semibold md:text-5xl">Confira algumas de nossas ofertas:</h2>
+          <h2 className="mb-8 text-4xl font-semibold md:text-5xl dark:text-[#fffafa]">Confira algumas de nossas ofertas:</h2>
           <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {ofertas.map((oferta) => (
               <article
@@ -166,8 +172,8 @@ function App() {
         </section>
 
         <section id="sobre" className="mx-auto w-full max-w-7xl px-5 pb-14 md:px-6">
-          <h2 className="text-5xl font-semibold md:text-5xl">Empresas Parceiras</h2>
-          <p className="mt-2 text-lg text-zinc-600">Marcas que confiam nas solucoes da Potenze.</p>
+          <h2 className="text-5xl font-semibold md:text-5xl dark:text-[#fffafa]">Empresas Parceiras</h2>
+          <p className="mt-2 text-lg text-zinc-600 dark:text-[#d9d9d9]">Marcas que confiam nas soluções da Potenze.</p>
 
           <div className="mt-6 grid grid-cols-2 gap-3 sm:hidden">
             {parceiros.map((parceiro) => (
