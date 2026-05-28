@@ -31,18 +31,21 @@ function Produtos() {
       detalhes: ["Potencia: 15W | 30W", "Grau de Protecao: IP69K"],
       imagem: Industriais,
       filtro: "Industriais",
+      modelo: "Modelo PZ-IND"
     },
     {
       nome: "Refletor Ultra",
       detalhes: ["Potencia: de 50W ate 900W", "Grau de Protecao: IP67"],
       imagem: Refletor,
       filtro: "Refletores",
+      modelo: "Modelo PZ-ULTRA"
     },
     {
       nome: "Luminária High Bay",
       detalhes: ["Potencia: 100W | 150W | 200W", "Grau de Protecao: IP67"],
       imagem: HighBay,
       filtro: "High Bay",
+      modelo: "Modelo PZ-HIGH"
     },
     {
       nome: "High Bay Modular",
@@ -52,6 +55,7 @@ function Produtos() {
       ],
       imagem: highBayModular,
       filtro: "High Bay",
+      modelo: "Modelo PZ-ULTRA HB"
     },
     {
       nome: "Linear IP66",
@@ -61,6 +65,7 @@ function Produtos() {
       ],
       imagem: linearIp66,
       filtro: "Lineares",
+      modelo: "Modelo PZ-HE"
     },
     {
       nome: "Linear IP69K",
@@ -70,6 +75,7 @@ function Produtos() {
       ],
       imagem: Lineares,
       filtro: "Lineares",
+      modelo: "Modelo PZ-HE IP"
     },
     {
       nome: "Luminária Deco",
@@ -79,6 +85,7 @@ function Produtos() {
       ],
       imagem: luminariaDeco,
       filtro: "Iluminação Pública",
+      modelo: "Modelo PZ-DECOR"
     },
     {
       nome: "Luminária Ex",
@@ -88,6 +95,7 @@ function Produtos() {
       ],
       imagem: EX,
       filtro: "EX",
+      modelo: "Modelo PZ-EX"
     },
     {
       nome: "Luminária Frigorífico",
@@ -97,6 +105,7 @@ function Produtos() {
       ],
       imagem: luminariaFrigorifico,
       filtro: "Industriais",
+      modelo: "Modelo PZ-FRIG"
     },
     {
       nome: "Luminária Pública",
@@ -106,6 +115,7 @@ function Produtos() {
       ],
       imagem: IlumPubli,
       filtro: "Iluminação Pública",
+      modelo: "Modelo PZ-PUBLIC"
     },
   ];
   const [activeIndex, setActiveIndex] = useState(null);

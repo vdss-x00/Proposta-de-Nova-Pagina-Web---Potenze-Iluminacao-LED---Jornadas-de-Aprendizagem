@@ -3,6 +3,42 @@ import { Link, useLocation } from "react-router-dom";
 function AvaliaProduto() {
   const location = useLocation();
   const product = location.state?.product;
+
+  const adicionarAoCarrinho = () => {
+    const carrinhoAtual = JSON.parse(
+      localStorage.getItem("potenze_carrinho") || "[]",
+    );
+    const itemExistente = carrinhoAtual.find(
+      (item) => item.id === product.nome,
+    );
+
+    if (itemExistente) {
+      const carrinhoAtualizado = carrinhoAtual.map((item) =>
+        item.id === product.nome
+          ? { ...item, quantidade: item.quantidade + 1 }
+          : item,
+      );
+      localStorage.setItem(
+        "potenze_carrinho",
+        JSON.stringify(carrinhoAtualizado),
+      );
+    } else {
+      const novoItem = {
+        id: product.nome,
+        nome: product.nome,
+        modelo: product.modelo,
+        imagem: product.imagem,
+        quantidade: 1,
+      };
+      localStorage.setItem(
+        "potenze_carrinho",
+        JSON.stringify([...carrinhoAtual, novoItem]),
+      );
+    }
+
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
+
   const especificacoes = [
     "Potência",
     "Lúmens",
@@ -45,7 +81,10 @@ function AvaliaProduto() {
           </Link>
         </div>
 
-        <h1 className="mt-2 text-4xl font-bold text-right">{product.nome}</h1>
+        <h1 className="mt-2 text-4xl font-bold text-center">{product.nome}</h1>
+        <h2 className="text-xl font-semibold text-center text-zinc-600">
+          {product.modelo}
+        </h2>
 
         <section className="inline-block gap-6 rounded-3xl border border-red-700 bg-white p-6 shadow-sm md:grid-cols-[1.2fr_0.8fr] dark:bg-[#1f1f1f]">
           <div className="inline-block items-center justify-center rounded-2xl bg-zinc-100 p-6 dark:bg-[#303030]">
@@ -57,9 +96,10 @@ function AvaliaProduto() {
           </div>
         </section>
 
+        <h1 className="mt-2 text-4xl font-bold mt-5">
+          Especificações do Produto
+        </h1>
 
-         <h1 className="mt-2 text-4xl font-bold mt-5">Especificações do Produto</h1>
-        
         <div className="mt-8 grid overflow-hidden rounded-none border border-black">
           {especificacoes.map((item, index) => (
             <div
@@ -76,23 +116,22 @@ function AvaliaProduto() {
           ))}
         </div>
 
-        <button className="flex mt-10 rounded-lg bg-[#9f1523] px-6 py-3 text-white hover:bg-[#7a1019] transition-colors items-center justify-center">
+        <button
+          onClick={adicionarAoCarrinho}
+          className="mt-10 inline-flex items-center justify-center gap-3 rounded-lg bg-[#9f1523] px-6 py-3 text-white transition-colors hover:bg-[#7a1019]"
+        >
           Adicionar ao Carrinho
-
           <svg
-                viewBox="0 0 24 24"
-                className="h-8 w-8"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
-              >
-                <circle cx="9" cy="20" r="1.6" />
-                <circle cx="18" cy="20" r="1.6" />
-                <path d="M2 3h3l2.2 10h11l2-7.2H6.1" />
-              </svg>
-              <span className="absolute -right-1 -top-1 text-sm font-semibold text-red-700">
-                o
-              </span>
+            viewBox="0 0 24 24"
+            className="h-6 w-6"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+          >
+            <circle cx="9" cy="20" r="1.6" />
+            <circle cx="18" cy="20" r="1.6" />
+            <path d="M2 3h3l2.2 10h11l2-7.2H6.1" />
+          </svg>
         </button>
       </div>
     </div>

@@ -1,17 +1,120 @@
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 function Carrinho() {
-    return (
-        <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
-            <div className="min-h-screen w-full flex flex-col mx-auto max-w-6xl py-12 px-6 text-center justify-center items-center">
-                <h1 className="text-5xl font-bold">Seu carrinho está vazio</h1>
-                <h3 className="text-2xl mt-4 text-zinc-600 dark:text-zinc-400">
-                    Navegue pela nossa seção de produtos e adicione um item ao seu carrinho.
-                </h3>
-                <button className="mt-6 rounded-lg bg-[#9f1523] px-6 py-3 text-white hover:bg-[#7a1019] transition-colors">
-                    Ver Produtos
-                </button>
-            </div>
-        </div>
+  const [itensCarrinho, setItensCarrinho] = useState(() => {
+    const armazenado = localStorage.getItem("potenze_carrinho");
+    return armazenado ? JSON.parse(armazenado) : [];
+  });
+
+  const carregarCarrinho = () => {
+    const armazenado = JSON.parse(
+      localStorage.getItem("potenze_carrinho") || "[]",
     );
+    setItensCarrinho(armazenado);
+  };
+
+  useEffect(() => {
+    const atualizarCarrinho = () => carregarCarrinho();
+    window.addEventListener("cartUpdated", atualizarCarrinho);
+
+    return () => window.removeEventListener("cartUpdated", atualizarCarrinho);
+  }, []);
+
+  const removerItem = (id) => {
+    const atualizado = itensCarrinho.filter((item) => item.id !== id);
+    localStorage.setItem("potenze_carrinho", JSON.stringify(atualizado));
+    setItensCarrinho(atualizado);
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
+
+  const adicionarMais = () => {
+    if (itensCarrinho.length === 0) return;
+
+    const atualizado = itensCarrinho.map((item, index) =>
+      index === 0 ? { ...item, quantidade: item.quantidade + 1 } : item,
+    );
+
+    localStorage.setItem("potenze_carrinho", JSON.stringify(atualizado));
+    setItensCarrinho(atualizado);
+    window.dispatchEvent(new Event("cartUpdated"));
+  };
+
+  if (itensCarrinho.length === 0) {
+    return (
+      <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
+        <div className="min-h-screen w-full flex flex-col mx-auto max-w-6xl py-12 px-6 text-center justify-center items-center">
+          <h1 className="text-5xl font-bold">Seu carrinho está vazio</h1>
+          <h3 className="text-2xl mt-4 text-zinc-600 dark:text-zinc-400">
+            Navegue pela nossa seção de produtos e adicione um item ao seu
+            carrinho.
+          </h3>
+          <Link
+            to="/produtos"
+            className="mt-6 rounded-lg bg-[#9f1523] px-6 py-3 text-white hover:bg-[#7a1019] transition-colors"
+          >
+            Ver Produtos
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-zinc-100 px-6 py-10 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
+      <div className="mx-auto max-w-7xl">
+        <h1 className="text-4xl font-bold">Itens do carrinho</h1>
+
+        <div className="mt-6 w-full rounded-2xl border-2 border-[#8f1a22] p-4">
+          <div className="grid grid-flow-col auto-cols-[minmax(280px,1fr)] gap-4 overflow-x-auto">
+            <button
+              onClick={adicionarMais}
+              className="flex min-h-[220px] min-w-[280px] flex-col items-center justify-center rounded-2xl border-2 border-[#ADA5A5] bg-white px-4 py-6 text-center"
+            >
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#ADA5A5] text-2xl font-bold text-[#ADA5A5]">
+                +
+              </div>
+              <p className="mt-4 text-base font-semibold text-[#ADA5A5]">
+                Adicionar mais um item
+              </p>
+            </button>
+
+            {itensCarrinho.map((item) => (
+              <div
+                key={item.id}
+                className="relative min-h-[220px] min-w-[280px] rounded-2xl border-2 border-dashed border-[#8f1a22] bg-white p-4"
+              >
+                <button
+                  onClick={() => removerItem(item.id)}
+                  className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded bg-[#8f1a22] text-sm font-bold text-white"
+                  aria-label="Remover item"
+                >
+                  X
+                </button>
+
+                <div className="flex h-full flex-col justify-between">
+                  <img
+                    src={item.imagem}
+                    alt={item.nome}
+                    className="mx-auto h-24 w-full object-contain"
+                  />
+                  <div className="mt-3">
+                    <p className="text-lg font-bold text-zinc-900">
+                      {item.nome}
+                    </p>
+                    <p className="mt-1 text-sm text-zinc-600">{item.modelo}</p>
+                    <p className="mt-2 text-sm font-semibold text-zinc-900">
+                      Quantidade: {item.quantidade}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
 
-export default Carrinho
+export default Carrinho;
