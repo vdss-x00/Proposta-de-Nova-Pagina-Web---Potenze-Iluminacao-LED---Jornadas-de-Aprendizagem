@@ -10,6 +10,7 @@ import highBayModular from "../assets/high_bay_modular.png";
 import linearIp66 from "../assets/linear_ip66.png";
 import luminariaDeco from "../assets/luminaria_deco.png";
 import luminariaFrigorifico from "../assets/luminaria_frigorifico.png";
+import DestaqueLuminariaIndustrial from "../assets/image 61.png";
 
 const parceirosRaw = import.meta.glob("../assets/empresas/*.png", {
   eager: true,
@@ -28,121 +29,109 @@ function Produtos() {
   const ofertas = [
     {
       nome: "Luminária Industrial",
-      detalhes: ["Potência: 15W | 30W", "Grau de Proteção: IP69K"],
+      detalhes: ["EX", "Potencia: 15W | 30W", "Grau de Protecao: IP69K"],
       imagem: Industriais,
       filtro: "Industriais",
       modelo: "Modelo PZ-IND",
-      garantia: "2 Anos de Garantia",
-      potencias: ["15W", "30W"]
+      especificacoes: [
+        {label: "Potência", value: "15W a 30W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP69K"},
+        {label: "Grau de Resistência", value: "IK10"},
+      ],
+      destaques: [
+        {
+          texto: "Produto EX certificado",
+          imagem: DestaqueLuminariaIndustrial,
+        },
+      ],
     },
     {
       nome: "Refletor Ultra",
-      detalhes: ["Potência: de 50W até 900W", "Grau de Proteção: IP67"],
+      detalhes: ["Potencia: de 50W ate 900W", "Grau de Protecao: IP67"],
       imagem: Refletor,
       filtro: "Refletores",
-      modelo: "Modelo PZ-ULTRA",
-      garantia: "5 Anos de Garantia",
-      potencias: ["50W", "100W", "150W", "200W", "300W", "400W", "600W", "900W"]
+      modelo: "Modelo PZ-ULTRA"
     },
     {
       nome: "Luminária High Bay",
-      detalhes: [
-        "Potência: 100W | 150W | 200W", 
-        "Grau de Proteção: IP67"
-      ],
+      detalhes: ["Potencia: 100W | 150W | 200W", "Grau de Protecao: IP67"],
       imagem: HighBay,
       filtro: "High Bay",
-      modelo: "Modelo PZ-HIGH",
-      garantia: "5 Anos de Garantia",
-      potencias: ["100W", "150W", "200W"]
+      modelo: "Modelo PZ-HIGH"
     },
     {
       nome: "High Bay Modular",
       detalhes: [
-        "Potência: de 50W até 300W",
-        "Grau de Proteção: IP67",
-        "Lúmens: de 8.873lm até 56.230lm",
+        "Aplicacao: galpoes e centros logisticos",
+        "Consulte potencia e configuracoes",
       ],
       imagem: highBayModular,
       filtro: "High Bay",
-      modelo: "Modelo PZ-ULTRA HB",
-      garantia: "5 Anos de Garantia",
-      potencias: ["50W", "100W", "150W", "200W", "300W"]
+      modelo: "Modelo PZ-ULTRA HB"
     },
     {
       nome: "Linear IP66",
       detalhes: [
-        "Potência: de 20W até 60W",
-        "Grau de Proteção: IP66",
+        "Aplicacao: areas industriais internas",
+        "Protecao reforcada contra poeira e agua",
       ],
       imagem: linearIp66,
       filtro: "Lineares",
-      modelo: "Modelo PZ-HE",
-      garantia: "3 Anos de Garantia",
-      potencias: ["20W", "40W", "50W", "60W"]
+      modelo: "Modelo PZ-HE"
     },
     {
       nome: "Linear IP69K",
       detalhes: [
-        "Potência: de 20W até 60W",
-        "Grau de Proteção: IP69K",
+        "Aplicacao: ambientes com higienizacao intensa",
+        "Alta resistencia para lavagem pressurizada",
       ],
       imagem: Lineares,
       filtro: "Lineares",
-      modelo: "Modelo PZ-HE IP",
-      garantia: "3 Anos de Garantia",
-      potencias: ["20W", "40W", "50W", "60W"]
+      modelo: "Modelo PZ-HE IP"
     },
     {
       nome: "Luminária Deco",
       detalhes: [
-        "Potência: de 20W até 60W",
-        "Grau de Proteção: IP69K",
+        "Aplicacao: projetos arquitetonicos e decorativos",
+        "Consulte modelos e temperaturas de cor",
       ],
       imagem: luminariaDeco,
       filtro: "Iluminação Pública",
-      modelo: "Modelo PZ-DECOR",
-      garantia: "5 Anos de Garantia",
-      potencias: ["20W", "40W", "50W", "60W"]
+      modelo: "Modelo PZ-DECOR"
     },
     {
       nome: "Luminária Ex",
       detalhes: [
-        "Potência: de 20W até 60W",
-        "Grau de Proteção: IP69K",
+        "Aplicacao: areas classificadas",
         "Consulte certificacoes e configuracoes",
       ],
       imagem: EX,
       filtro: "EX",
-      modelo: "Modelo PZ-EX",
-      garantia: "5 Anos de Garantia",
-      potencias: ["15W", "30W"]  
+      modelo: "Modelo PZ-EX"
     },
     {
       nome: "Luminária Frigorífico",
       detalhes: [
-        "Potência: 15W | 30W",
-        "Grau de Proteção: IP69K",
-        "Lúmens: 1.735lm | 3.470lm",
+        "Aplicacao: camaras frias e frigorificos",
+        "Projetada para baixas temperaturas",
       ],
       imagem: luminariaFrigorifico,
       filtro: "Industriais",
-      modelo: "Modelo PZ-FRIG",
-      garantia: "5 Anos de Garantia",
-      potencias: ["15W", "30W"]
+      modelo: "Modelo PZ-FRIG"
     },
     {
       nome: "Luminária Pública",
       detalhes: [
-        "Potência: de 55W até 200W",
-        "Grau de Proteção: IP66",
-        "Lúmens: de 10.019lm até 34.987lm",
+        "Aplicacao: vias e areas externas",
+        "Consulte fotometria e opcoes de montagem",
       ],
       imagem: IlumPubli,
       filtro: "Iluminação Pública",
-      modelo: "Modelo PZ-PUBLIC",
-      garantia: "5 Anos de Garantia",
-      potencias: ["55W", "75W", "100W", "150W", "200W"]
+      modelo: "Modelo PZ-PUBLIC"
     },
   ];
   const [activeIndex, setActiveIndex] = useState(null);
@@ -227,13 +216,14 @@ function Produtos() {
               <Link
                 to={`/avalia-produto/${index}`}
                 state={{ product: oferta }}
-                className="mt-auto inline-flex items-center justify-center gap-2 rounded-full border border-red-700 px-4 py-2 text-sm font-semibold text-red-500 hover:bg-red-700 hover:text-white transition-all duration-300"
+                className="mt-6 self-start inline-flex rounded-full border border-red-700 px-4 py-2 text-sm font-semibold text-red-700 hover:bg-red-700 hover:text-white"
               >
                 Ver Oferta
               </Link>
             </article>
           ))}
         </div>
+
       </div>
     </div>
   );
