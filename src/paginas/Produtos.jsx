@@ -28,94 +28,121 @@ function Produtos() {
   const ofertas = [
     {
       nome: "Luminária Industrial",
-      detalhes: ["Potencia: 15W | 30W", "Grau de Protecao: IP69K"],
+      detalhes: ["Potência: 15W | 30W", "Grau de Proteção: IP69K"],
       imagem: Industriais,
       filtro: "Industriais",
-      modelo: "Modelo PZ-IND"
+      modelo: "Modelo PZ-IND",
+      garantia: "2 Anos de Garantia",
+      potencias: ["15W", "30W"]
     },
     {
       nome: "Refletor Ultra",
-      detalhes: ["Potencia: de 50W ate 900W", "Grau de Protecao: IP67"],
+      detalhes: ["Potência: de 50W até 900W", "Grau de Proteção: IP67"],
       imagem: Refletor,
       filtro: "Refletores",
-      modelo: "Modelo PZ-ULTRA"
+      modelo: "Modelo PZ-ULTRA",
+      garantia: "5 Anos de Garantia",
+      potencias: ["50W", "100W", "150W", "200W", "300W", "400W", "600W", "900W"]
     },
     {
       nome: "Luminária High Bay",
-      detalhes: ["Potencia: 100W | 150W | 200W", "Grau de Protecao: IP67"],
+      detalhes: [
+        "Potência: 100W | 150W | 200W", 
+        "Grau de Proteção: IP67"
+      ],
       imagem: HighBay,
       filtro: "High Bay",
-      modelo: "Modelo PZ-HIGH"
+      modelo: "Modelo PZ-HIGH",
+      garantia: "5 Anos de Garantia",
+      potencias: ["100W", "150W", "200W"]
     },
     {
       nome: "High Bay Modular",
       detalhes: [
-        "Aplicacao: galpoes e centros logisticos",
-        "Consulte potencia e configuracoes",
+        "Potência: de 50W até 300W",
+        "Grau de Proteção: IP67",
+        "Lúmens: de 8.873lm até 56.230lm",
       ],
       imagem: highBayModular,
       filtro: "High Bay",
-      modelo: "Modelo PZ-ULTRA HB"
+      modelo: "Modelo PZ-ULTRA HB",
+      garantia: "5 Anos de Garantia",
+      potencias: ["50W", "100W", "150W", "200W", "300W"]
     },
     {
       nome: "Linear IP66",
       detalhes: [
-        "Aplicacao: areas industriais internas",
-        "Protecao reforcada contra poeira e agua",
+        "Potência: de 20W até 60W",
+        "Grau de Proteção: IP66",
       ],
       imagem: linearIp66,
       filtro: "Lineares",
-      modelo: "Modelo PZ-HE"
+      modelo: "Modelo PZ-HE",
+      garantia: "3 Anos de Garantia",
+      potencias: ["20W", "40W", "50W", "60W"]
     },
     {
       nome: "Linear IP69K",
       detalhes: [
-        "Aplicacao: ambientes com higienizacao intensa",
-        "Alta resistencia para lavagem pressurizada",
+        "Potência: de 20W até 60W",
+        "Grau de Proteção: IP69K",
       ],
       imagem: Lineares,
       filtro: "Lineares",
-      modelo: "Modelo PZ-HE IP"
+      modelo: "Modelo PZ-HE IP",
+      garantia: "3 Anos de Garantia",
+      potencias: ["20W", "40W", "50W", "60W"]
     },
     {
       nome: "Luminária Deco",
       detalhes: [
-        "Aplicacao: projetos arquitetonicos e decorativos",
-        "Consulte modelos e temperaturas de cor",
+        "Potência: de 20W até 60W",
+        "Grau de Proteção: IP69K",
       ],
       imagem: luminariaDeco,
       filtro: "Iluminação Pública",
-      modelo: "Modelo PZ-DECOR"
+      modelo: "Modelo PZ-DECOR",
+      garantia: "5 Anos de Garantia",
+      potencias: ["20W", "40W", "50W", "60W"]
     },
     {
       nome: "Luminária Ex",
       detalhes: [
-        "Aplicacao: areas classificadas",
+        "Potência: de 20W até 60W",
+        "Grau de Proteção: IP69K",
         "Consulte certificacoes e configuracoes",
       ],
       imagem: EX,
       filtro: "EX",
-      modelo: "Modelo PZ-EX"
+      modelo: "Modelo PZ-EX",
+      garantia: "5 Anos de Garantia",
+      potencias: ["15W", "30W"]  
     },
     {
       nome: "Luminária Frigorífico",
       detalhes: [
-        "Aplicacao: camaras frias e frigorificos",
-        "Projetada para baixas temperaturas",
+        "Potência: 15W | 30W",
+        "Grau de Proteção: IP69K",
+        "Lúmens: 1.735lm | 3.470lm",
       ],
       imagem: luminariaFrigorifico,
       filtro: "Industriais",
-      modelo: "Modelo PZ-FRIG"
+      modelo: "Modelo PZ-FRIG",
+      garantia: "5 Anos de Garantia",
+      potencias: ["15W", "30W"]
     },
     {
       nome: "Luminária Pública",
       detalhes: [
-        "Aplicacao: vias e areas externas",
-        "Consulte fotometria e opcoes de montagem",
+        "Potência: de 55W até 200W",
+        "Grau de Proteção: IP66",
+        "Lúmens: de 10.019lm até 34.987lm",
       ],
       imagem: IlumPubli,
       filtro: "Iluminação Pública",
-      modelo: "Modelo PZ-PUBLIC"
+      modelo: "Modelo PZ-PUBLIC",
+      garantia: "5 Anos de Garantia",
+      potencias: ["55W", "75W", "100W", "150W", "200W"]
     },
   ];
   const [activeIndex, setActiveIndex] = useState(null);

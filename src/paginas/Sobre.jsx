@@ -1,12 +1,11 @@
-```jsx
-import Potence1 from '../assets/sobre/Potence1.png'
-import Potence2 from '../assets/sobre/Potence2.png'
+import Potence1 from "../assets/Potence1.png"
+import Potence2 from "../assets/Potence2.png"
 
 function Sobre() {
 
     return (
 
-        <main className="bg-[#efefef] min-h-screen py-20 px-6">
+        <div className="min-h-screen py-20 px-6 bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
 
             <section className="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
 
@@ -67,10 +66,10 @@ function Sobre() {
 
             </section>
 
-        </main>
+        </div>
 
     );
 }
 
 export default Sobre
-```
+
