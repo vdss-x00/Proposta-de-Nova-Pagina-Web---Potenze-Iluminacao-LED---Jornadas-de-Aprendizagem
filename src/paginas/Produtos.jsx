@@ -134,7 +134,7 @@ function Produtos() {
     : ofertas;
 
   return (
-    <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
+    <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 mt-30 dark:bg-[#303030] dark:text-[#fffafa]">
       <div className="mx-auto max-w-7xl px-6 pb-20">
         <h2 className="text-2xl font-bold mb-10 mt-20 dark:text-[#fffafa]">
           Categorias
