@@ -215,7 +215,7 @@ function Produtos() {
           {filteredOfertas.map((oferta, index) => (
             <article
               key={oferta.nome}
-              className="flex h-[34rem] w-[360px] flex-col rounded-2xl border border-red-700 bg-transparent p-5 shadow-sm"
+              className="flex h-[34rem] w-[360px] flex-col rounded-2xl border border-red-700 bg-transparent p-5 shadow-sm "
             >
               <div className="mb-4 flex h-44 items-center justify-center rounded-xl">
                 <img
@@ -227,7 +227,7 @@ function Produtos() {
               <h3 className="min-h-[5.5rem] text-[2rem] font-bold leading-tight">
                 {oferta.nome}
               </h3>
-              <ul className="mt-3 min-h-[4.5rem] space-y-1.5 text-[1rem] leading-snug text-zinc-600">
+              <ul className="mt-3 min-h-[4.5rem] space-y-1.5 text-[1rem] leading-snug text-{currentColor}">
                 {oferta.detalhes.map((detalhe) => (
                   <li key={detalhe}>{detalhe}</li>
                 ))}
