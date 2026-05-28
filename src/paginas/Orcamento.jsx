@@ -64,6 +64,32 @@ function Orcamento() {
               required
             >
               <option value="">UF*</option>
+              <option value="AC">AC</option>
+              <option value="AL">AL</option>
+              <option value="AP">AP</option>
+              <option value="AM">AM</option>
+              <option value="BA">BA</option>
+              <option value="CE">CE</option>
+              <option value="DF">DF</option>
+              <option value="ES">ES</option>
+              <option value="GO">GO</option>
+              <option value="MA">MA</option>
+              <option value="MT">MT</option>
+              <option value="MS">MS</option>
+              <option value="MG">MG</option>
+              <option value="PA">PA</option>
+              <option value="PB">PB</option>
+              <option value="PR">PR</option>
+              <option value="PE">PE</option>
+              <option value="PI">PI</option>
+              <option value="RJ">RJ</option>
+              <option value="RN">RN</option>
+              <option value="RO">RO</option>
+              <option value="RR">RR</option>
+              <option value="SC">SC</option>
+              <option value="SP">SP</option>
+              <option value="SE">SE</option>
+              <option value="TO">TO</option>
             </select>
 
             <input
@@ -80,6 +106,9 @@ function Orcamento() {
                 required
               >
                 <option value="">Tipo de Negociação*</option>
+                <option value="Consumo">Consumo</option>
+                <option value="Revenda">Revenda</option>
+                <option value="Industrialização">Industrialização</option>
               </select>
 
               <select
@@ -88,6 +117,77 @@ function Orcamento() {
                 required
               >
                 <option value="">Segmento*</option>
+                <option value="Aeroportos / Aviação">
+                  Aeroportos / Aviação
+                </option>
+                <option value="Agroindústria">Agroindústria</option>
+                <option value="Alimentícia">Alimentícia</option>
+                <option value="Armazéns">Armazéns</option>
+                <option value="Arquitetura">Arquitetura</option>
+                <option value="Automação">Automação</option>
+                <option value="Automobilística">Automobilística</option>
+                <option value="Açúcar e Álcool">Açúcar e Álcool</option>
+                <option value="Bancos">Bancos</option>
+                <option value="Campos &amp; Quadra">Campos &amp; Quadra</option>
+                <option value="Centros de Distribuição">
+                  Centros de Distribuição
+                </option>
+                <option value="Cliente Final">Cliente Final</option>
+                <option value="Clubes">Clubes</option>
+                <option value="Concessionária">Concessionária</option>
+                <option value="Condomínios">Condomínios</option>
+                <option value="Construtora">Construtora</option>
+                <option value="Distribuidor">Distribuidor</option>
+                <option value="Eletrônicos">Eletrônicos</option>
+                <option value="Embalagens">Embalagens</option>
+                <option value="Energia">Energia</option>
+                <option value="Energia Renovável">Energia Renovável</option>
+                <option value="Engenharia">Engenharia</option>
+                <option value="Ensino">Ensino</option>
+                <option value="Entretenimento">Entretenimento</option>
+                <option value="Farmacêutico">Farmacêutico</option>
+                <option value="Fertilizantes">Fertilizantes</option>
+                <option value="Hotelaria">Hotelaria</option>
+                <option value="Iluminação Pública">Iluminação Pública</option>
+                <option value="Imobiliário">Imobiliário</option>
+                <option value="Instaladora">Instaladora</option>
+                <option value="Logística">Logística</option>
+                <option value="Manufatura">Manufatura</option>
+                <option value="Maquinários">Maquinários</option>
+                <option value="Metalurgia">Metalurgia</option>
+                <option value="Mineração">Mineração</option>
+                <option value="Outro">Outro</option>
+                <option value="Papel / Celulose">Papel / Celulose</option>
+                <option value="Portos">Portos</option>
+                <option value="Posto de Combustível">
+                  Posto de Combustível
+                </option>
+                <option value="Química">Química</option>
+                <option value="Revenda">Revenda</option>
+                <option value="Saneamento">Saneamento</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Siderurgia">Siderurgia</option>
+                <option value="Subestações">Subestações</option>
+                <option value="Supermercados">Supermercados</option>
+                <option value="Tecnologia">Tecnologia</option>
+                <option value="Telecomunicação">Telecomunicação</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Transporte Ferroviário">
+                  Transporte Ferroviário
+                </option>
+                <option value="Têxtil">Têxtil</option>
+                <option value="Usinas">Usinas</option>
+                <option value="Usinas Biocombustível">
+                  Usinas Biocombustível
+                </option>
+                <option value="Usinas Termelétricas">
+                  Usinas Termelétricas
+                </option>
+                <option value="Varejo">Varejo</option>
+                <option value="Óleo &amp; Gás">Óleo &amp; Gás</option>
+                <option value="Órgãos Públicos">Órgãos Públicos</option>
+                <option value="Contratista">Contratista</option>
+                <option value="Plásticos">Plásticos</option>{" "}
               </select>
             </div>
 
@@ -107,6 +207,10 @@ function Orcamento() {
                 required
               >
                 <option value="">Selecione</option>
+                <option value="Indicação">Indicação</option>
+                <option value="Redes Sociais">Redes Sociais</option>
+                <option value="Google">Google</option>
+                <option value="Outros">Outros</option>
               </select>
             </div>
 
