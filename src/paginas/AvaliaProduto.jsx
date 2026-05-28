@@ -3,6 +3,16 @@ import { Link, useLocation } from "react-router-dom";
 function AvaliaProduto() {
   const location = useLocation();
   const product = location.state?.product;
+  const especificacoes = [
+    "Potência",
+    "Lúmens",
+    "Frequência",
+    "Temperatura de Cor",
+    "Garantia",
+    "Ângulo de abertura do facho",
+    "Grau de Proteção",
+    "Grau de Resistência",
+  ];
 
   if (!product) {
     return (
@@ -26,9 +36,7 @@ function AvaliaProduto() {
     <div className="min-h-screen bg-zinc-100 px-6 py-10 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa] mt-30">
       <div className="mx-auto max-w-6xl">
         <div className="mb-6 flex items-center justify-between">
-          <div>
-            <h1 className="mt-2 text-4xl font-bold">{product.nome}</h1>
-          </div>
+          <div></div>
           <Link
             to="/produtos"
             className="rounded-full border border-red-700 px-4 py-2 text-sm font-semibold text-red-700 hover:bg-red-700 hover:text-white"
@@ -36,6 +44,8 @@ function AvaliaProduto() {
             Voltar aos produtos
           </Link>
         </div>
+
+        <h1 className="mt-2 text-4xl font-bold text-right">{product.nome}</h1>
 
         <section className="inline-block gap-6 rounded-3xl border border-red-700 bg-white p-6 shadow-sm md:grid-cols-[1.2fr_0.8fr] dark:bg-[#1f1f1f]">
           <div className="inline-block items-center justify-center rounded-2xl bg-zinc-100 p-6 dark:bg-[#303030]">
@@ -45,10 +55,45 @@ function AvaliaProduto() {
               className="max-h-[420px] w-full object-contain"
             />
           </div>
-
-         
         </section>
+
+
+         <h1 className="mt-2 text-4xl font-bold mt-5">Especificações do Produto</h1>
         
+        <div className="mt-8 grid overflow-hidden rounded-none border border-black">
+          {especificacoes.map((item, index) => (
+            <div
+              key={item}
+              className={`grid grid-cols-2 border-b border-black last:border-b-0 ${
+                index % 2 === 0 ? "bg-[#ffffff]" : "bg-[#f6f6f6]"
+              }`}
+            >
+              <div className="border-r border-black px-4 py-3 text-sm font-medium text-zinc-900">
+                {item}
+              </div>
+              <div className="px-4 py-3 text-sm text-zinc-600"></div>
+            </div>
+          ))}
+        </div>
+
+        <button className="flex mt-10 rounded-lg bg-[#9f1523] px-6 py-3 text-white hover:bg-[#7a1019] transition-colors items-center justify-center">
+          Adicionar ao Carrinho
+
+          <svg
+                viewBox="0 0 24 24"
+                className="h-8 w-8"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+              >
+                <circle cx="9" cy="20" r="1.6" />
+                <circle cx="18" cy="20" r="1.6" />
+                <path d="M2 3h3l2.2 10h11l2-7.2H6.1" />
+              </svg>
+              <span className="absolute -right-1 -top-1 text-sm font-semibold text-red-700">
+                o
+              </span>
+        </button>
       </div>
     </div>
   );
