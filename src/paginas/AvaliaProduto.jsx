@@ -86,12 +86,12 @@ function AvaliaProduto() {
           {product.modelo}
         </h2>
 
-        <section className="inline-block gap-6 rounded-3xl border border-red-700 bg-white p-6 shadow-sm md:grid-cols-[1.2fr_0.8fr] dark:bg-[#1f1f1f]">
-          <div className="inline-block items-center justify-center rounded-2xl bg-zinc-100 p-6 dark:bg-[#303030]">
+        <section className="inline-block w-full max-w-2xl rounded-3xl border border-red-700 bg-white p-6 shadow-sm dark:bg-[#1f1f1f]">
+          <div className="flex h-[320px] w-full items-center justify-center rounded-2xl bg-zinc-100 p-6 dark:bg-[#303030]">
             <img
               src={product.imagem}
               alt={product.nome}
-              className="max-h-[420px] w-full object-contain"
+              className="h-full w-full object-contain"
             />
           </div>
         </section>

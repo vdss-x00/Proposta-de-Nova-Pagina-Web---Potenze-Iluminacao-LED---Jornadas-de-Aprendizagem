@@ -180,7 +180,7 @@ function Produtos() {
           {filteredOfertas.map((oferta, index) => (
             <article
               key={oferta.nome}
-              className="flex h-[34rem] w-[360px] flex-col rounded-2xl border border-red-700 bg-white p-5 shadow-sm"
+              className="flex h-[34rem] w-[360px] flex-col rounded-2xl border border-red-700 bg-transparent p-5 shadow-sm"
             >
               <div className="mb-4 flex h-44 items-center justify-center rounded-xl">
                 <img

@@ -28,18 +28,6 @@ function Carrinho() {
     window.dispatchEvent(new Event("cartUpdated"));
   };
 
-  const adicionarMais = () => {
-    if (itensCarrinho.length === 0) return;
-
-    const atualizado = itensCarrinho.map((item, index) =>
-      index === 0 ? { ...item, quantidade: item.quantidade + 1 } : item,
-    );
-
-    localStorage.setItem("potenze_carrinho", JSON.stringify(atualizado));
-    setItensCarrinho(atualizado);
-    window.dispatchEvent(new Event("cartUpdated"));
-  };
-
   if (itensCarrinho.length === 0) {
     return (
       <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
@@ -66,27 +54,15 @@ function Carrinho() {
         <h1 className="text-4xl font-bold">Itens do carrinho</h1>
 
         <div className="mt-6 w-full rounded-2xl border-2 border-[#8f1a22] p-4">
-          <div className="grid grid-flow-col auto-cols-[minmax(280px,1fr)] gap-4 overflow-x-auto">
-            <button
-              onClick={adicionarMais}
-              className="flex min-h-[220px] min-w-[280px] flex-col items-center justify-center rounded-2xl border-2 border-[#ADA5A5] bg-white px-4 py-6 text-center"
-            >
-              <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#ADA5A5] text-2xl font-bold text-[#ADA5A5]">
-                +
-              </div>
-              <p className="mt-4 text-base font-semibold text-[#ADA5A5]">
-                Adicionar mais um item
-              </p>
-            </button>
-
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
             {itensCarrinho.map((item) => (
               <div
                 key={item.id}
-                className="relative min-h-[220px] min-w-[280px] rounded-2xl border-2 border-dashed border-[#8f1a22] bg-white p-4"
+                className="relative min-h-[220px] w-full rounded-2xl border-2 border-dashed border-[#8f1a22] bg-transparent p-4"
               >
                 <button
                   onClick={() => removerItem(item.id)}
-                  className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded bg-[#8f1a22] text-sm font-bold text-white"
+                  className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded bg-[#8f1a22] text-sm font-bold text-white cursor-pointer"
                   aria-label="Remover item"
                 >
                   X
@@ -110,7 +86,27 @@ function Carrinho() {
                 </div>
               </div>
             ))}
+
+            <Link
+              to="/produtos"
+              className="flex min-h-[220px] w-full flex-col items-center justify-center rounded-2xl border-2 border-[#ADA5A5] border-dashed bg-transparent px-4 py-6 text-center cursor-pointer"
+            >
+              <div className="flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#ADA5A5] text-2xl font-bold text-[#ADA5A5]">
+                +
+              </div>
+              <p className="mt-4 text-base font-semibold text-[#ADA5A5]">
+                Adicionar mais um item
+              </p>
+            </Link>
           </div>
+        </div>
+
+        <div className="mt-8 flex justify-center">
+          <Link to="/orcamento">
+            <button className="rounded-lg bg-[#9f1523] px-6 py-3 text-white hover:bg-[#7a1019] transition-colors">
+              Prosseguir para o Orçamento
+            </button>
+          </Link>
         </div>
       </div>
     </div>
