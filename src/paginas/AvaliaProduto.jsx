@@ -81,24 +81,52 @@ function AvaliaProduto() {
           </Link>
         </div>
 
-        <h1 className="mt-2 text-4xl font-bold text-center">{product.nome}</h1>
-        <h2 className="text-xl font-semibold text-center text-zinc-600">
-          {product.modelo}
-        </h2>
+        <div className="mt-6 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
+          <section className="rounded-3xl border border-red-700 bg-white p-6 shadow-sm dark:bg-[#1f1f1f]">
+            <div className="flex h-[360px] w-full items-center justify-center rounded-2xl bg-zinc-100 p-6 dark:bg-[#303030]">
+              <img
+                src={product.imagem}
+                alt={product.nome}
+                className="h-full w-full object-contain"
+              />
+            </div>
+          </section>
 
-        <section className="inline-block w-full max-w-2xl rounded-3xl border border-red-700 bg-white p-6 shadow-sm dark:bg-[#1f1f1f]">
-          <div className="flex h-[320px] w-full items-center justify-center rounded-2xl bg-zinc-100 p-6 dark:bg-[#303030]">
-            <img
-              src={product.imagem}
-              alt={product.nome}
-              className="h-full w-full object-contain"
-            />
-          </div>
-        </section>
+          <section className="rounded-3xl border border-red-700 bg-white p-6 shadow-sm dark:bg-[#1f1f1f]">
+            <div className="flex h-full flex-col justify-between gap-6 text-center">
+              <div className="space-y-3">
+                <h1 className="text-4xl font-bold text-zinc-900 dark:text-[#fffafa]">
+                  {product.nome}
+                </h1>
+                <h2 className="text-xl font-semibold text-zinc-600 dark:text-zinc-300">
+                  {product.modelo}
+                </h2>
+                
+              </div>
 
-        <h1 className="mt-2 text-4xl font-bold mt-5">
-          Especificações do Produto
-        </h1>
+              <div className="rounded-2xl bg-zinc-100 p-4 dark:bg-[#303030]"></div>
+              <button
+                onClick={adicionarAoCarrinho}
+                className="mt-10 inline-flex items-center justify-center gap-3 rounded-lg bg-[#9f1523] px-6 py-3 text-white transition-colors hover:bg-[#7a1019]"
+              >
+                Adicionar ao Carrinho
+                <svg
+                  viewBox="0 0 24 24"
+                  className="h-6 w-6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.8"
+                >
+                  <circle cx="9" cy="20" r="1.6" />
+                  <circle cx="18" cy="20" r="1.6" />
+                  <path d="M2 3h3l2.2 10h11l2-7.2H6.1" />
+                </svg>
+              </button>
+            </div>
+          </section>
+        </div>
+
+        <h1 className="mt-8 text-4xl font-bold">Especificações do Produto</h1>
 
         <div className="mt-8 grid overflow-hidden rounded-none border border-black">
           {especificacoes.map((item, index) => (
