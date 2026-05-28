@@ -93,34 +93,55 @@ function Home() {
   return ( 
     <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
       <main>
-        <section className="relative overflow-hidden w-full bg-[#000]  max-w-[1200px] mx-auto h-[450px]">
-          <div className="flex w-[600%] h-full animate-slide">
+        <section className="relative overflow-hidden w-full bg-black max-w-[1400px] mx-auto h-[70vh] md:h-[85vh] rounded-2xl">
+          <div className="flex w-[600%] h-full animate-slide relative">
+            <div className="absolute inset-0 bg-black/40 z-10"></div>
             <div className="w-1/6 h-full flex-shrink-0">
-              <img 
-                src={potenze_1} 
-                className="w-full h-full object-cover" 
+              <img
+                src={potenze_1}
+                className="w-full h-full object-cover scale-105 hover:scale-110 transition-all duration-[4000ms]"
                 alt="Potenze 1"
               />
             </div>
 
             <div className="w-1/6 h-full flex-shrink-0">
-              <img src={potenze_2} class="w-full h-full object-cover" alt="Potenze 2" />
+              <img
+                src={potenze_2}
+                className="w-full h-full object-cover"
+                alt="Potenze 2"
+              />
             </div>
 
             <div className="w-1/6 h-full flex-shrink-0">
-              <img src={potenze_3} class="w-full h-full object-cover" alt="Potenze 3" />
+              <img
+                src={potenze_3}
+                className="w-full h-full object-cover"
+                alt="Potenze 3"
+              />
             </div>
 
             <div className="w-1/6 h-full flex-shrink-0">
-              <img src={potenze_4} class="w-full h-full object-cover" alt="Potenze 4" />
+              <img
+                src={potenze_4}
+                className="w-full h-full object-cover"
+                alt="Potenze 4"
+              />
             </div>
 
             <div className="w-1/6 h-full flex-shrink-0">
-              <img src={potenze_5} class="w-full h-full object-cover" alt="Potenze 5" />
+              <img
+                src={potenze_5}
+                class="w-full h-full object-cover"
+                alt="Potenze 5"
+              />
             </div>
 
             <div className="w-1/6 h-full flex-shrink-0">
-              <img src={potenze_1} class="w-full h-full object-cover" alt="Potenze 1 Loop" />
+              <img
+                src={potenze_1}
+                className="w-full h-full object-cover"
+                alt="Potenze 1 Loop"
+              />
             </div>
           </div>
 
