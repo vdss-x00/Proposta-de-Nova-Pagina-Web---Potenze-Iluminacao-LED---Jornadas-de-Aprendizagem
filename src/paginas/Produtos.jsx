@@ -29,7 +29,11 @@ function Produtos() {
   const ofertas = [
     {
       nome: "Luminária Industrial",
-      detalhes: ["EX", "Potencia: 15W | 30W", "Grau de Protecao: IP69K"],
+      detalhes: [
+        "Potência: 15W | 30W", 
+        "Grau de Proteção: IP69K",
+        "Lúmens: 1.735lm | 3.470lm"
+      ],
       imagem: Industriais,
       filtro: "Industriais",
       modelo: "Modelo PZ-IND",
@@ -51,14 +55,22 @@ function Produtos() {
     },
     {
       nome: "Refletor Ultra",
-      detalhes: ["Potencia: de 50W ate 900W", "Grau de Protecao: IP67"],
+      detalhes: [
+        "Potência: de 50W ate 900W", 
+        "Grau de Proteção: IP67",
+        "Lúmens: de 8.873lm ate 168.689lm"
+      ],
       imagem: Refletor,
       filtro: "Refletores",
       modelo: "Modelo PZ-ULTRA"
     },
     {
       nome: "Luminária High Bay",
-      detalhes: ["Potencia: 100W | 150W | 200W", "Grau de Protecao: IP67"],
+      detalhes: [
+        "Potência: 100W | 150W | 200W",
+        "Grau de Proteção: IP67",
+        "Lúmens: 15.042lm | 24.529lm | 31.757lm"
+      ],
       imagem: HighBay,
       filtro: "High Bay",
       modelo: "Modelo PZ-HIGH"
@@ -66,8 +78,9 @@ function Produtos() {
     {
       nome: "High Bay Modular",
       detalhes: [
-        "Aplicacao: galpoes e centros logisticos",
-        "Consulte potencia e configuracoes",
+        "Potência: de 50W até 300W", 
+        "Grau de Proteção: IP67",
+        "Lúmens: de 8.873lm até 168.689lm"
       ],
       imagem: highBayModular,
       filtro: "High Bay",
@@ -76,8 +89,9 @@ function Produtos() {
     {
       nome: "Linear IP66",
       detalhes: [
-        "Aplicacao: areas industriais internas",
-        "Protecao reforcada contra poeira e agua",
+        "Potência: de 20W até 60W", 
+        "Grau de Proteção: IP66",
+        "Lúmens: de 3.000lm até 9.000lm"
       ],
       imagem: linearIp66,
       filtro: "Lineares",
@@ -86,8 +100,9 @@ function Produtos() {
     {
       nome: "Linear IP69K",
       detalhes: [
-        "Aplicacao: ambientes com higienizacao intensa",
-        "Alta resistencia para lavagem pressurizada",
+        "Potência: de 20W até 60W", 
+        "Grau de Proteção: IP69K",
+        "Lúmens: de 3.000lm até 9.000lm"
       ],
       imagem: Lineares,
       filtro: "Lineares",
@@ -96,8 +111,9 @@ function Produtos() {
     {
       nome: "Luminária Deco",
       detalhes: [
-        "Aplicacao: projetos arquitetonicos e decorativos",
-        "Consulte modelos e temperaturas de cor",
+        "Potência: 50W | 70W | 100W", 
+        "Grau de Proteção: IP66",
+        "Lúmens: 8.775lm | 13.560lm | 17.946lm"
       ],
       imagem: luminariaDeco,
       filtro: "Iluminação Pública",
@@ -106,8 +122,9 @@ function Produtos() {
     {
       nome: "Luminária Ex",
       detalhes: [
-        "Aplicacao: areas classificadas",
-        "Consulte certificacoes e configuracoes",
+        "Potência: 15W | 30W", 
+        "Grau de Proteção: IP69K",
+        "Lúmens: 1.735lm | 3.470lm"
       ],
       imagem: EX,
       filtro: "EX",
@@ -116,8 +133,9 @@ function Produtos() {
     {
       nome: "Luminária Frigorífico",
       detalhes: [
-        "Aplicacao: camaras frias e frigorificos",
-        "Projetada para baixas temperaturas",
+        "Potência: 15W | 30W", 
+        "Grau de Proteção: IP69K",
+        "Lúmens: 1.735lm | 3.470lm"
       ],
       imagem: luminariaFrigorifico,
       filtro: "Industriais",
@@ -126,8 +144,9 @@ function Produtos() {
     {
       nome: "Luminária Pública",
       detalhes: [
-        "Aplicacao: vias e areas externas",
-        "Consulte fotometria e opcoes de montagem",
+        "Potência: de 55W até 200W", 
+        "Grau de Proteção: IP66",
+        "Lúmens: de 10.019lm até 34.987lm"
       ],
       imagem: IlumPubli,
       filtro: "Iluminação Pública",
