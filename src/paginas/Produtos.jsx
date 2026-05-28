@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import HighBay from "../assets/high_bay.png";
 import Refletor from "../assets/refletor_ultra.png";
 import EX from "../assets/luminaria_ex.png";
@@ -166,7 +167,7 @@ function Produtos() {
         </section>
 
         <div className="grid gap-5 justify-items-center md:grid-cols-2 lg:grid-cols-3">
-          {filteredOfertas.map((oferta) => (
+          {filteredOfertas.map((oferta, index) => (
             <article
               key={oferta.nome}
               className="flex h-[34rem] w-[360px] flex-col rounded-2xl border border-red-700 bg-white p-5 shadow-sm"
@@ -186,9 +187,13 @@ function Produtos() {
                   <li key={detalhe}>{detalhe}</li>
                 ))}
               </ul>
-              <button className="mt-auto inline-flex items-center gap-2 rounded-full border border-red-700 px-4 py-2 text-sm font-semibold text-red-500 hover:bg-red-700 hover:text-white transition-all duration-300">
+              <Link
+                to={`/avalia-produto/${index}`}
+                state={{ product: oferta }}
+                className="mt-auto inline-flex items-center justify-center gap-2 rounded-full border border-red-700 px-4 py-2 text-sm font-semibold text-red-500 hover:bg-red-700 hover:text-white transition-all duration-300"
+              >
                 Ver Oferta
-              </button>
+              </Link>
             </article>
           ))}
         </div>
