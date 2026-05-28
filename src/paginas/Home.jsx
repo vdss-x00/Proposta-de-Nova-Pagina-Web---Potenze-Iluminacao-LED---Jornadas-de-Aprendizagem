@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import highBay from "../assets/high_bay.png";
 import highBayModular from "../assets/high_bay_modular.png";
 import linearIp66 from "../assets/linear_ip66.png";
@@ -226,16 +227,23 @@ function Home() {
                     <li key={detalhe}>{detalhe}</li>
                   ))}
                 </ul>
-                <button className="mt-auto w-fit rounded-2xl bg-red-800 px-8 py-2 text-[2rem] leading-none text-white">
-                  Ver Oferta
-                </button>
+                <Link
+                  to={`/avalia-produto/${oferta.nome.toLowerCase().replace(/\s+/g, "-")}`}
+                  state={{ product: oferta }}
+                >
+                  <button className="mt-auto w-fit rounded-2xl bg-red-800 px-8 py-2 text-[2rem] leading-none text-white cursor-pointer hover:bg-red-700">
+                    Ver Oferta
+                  </button>
+                </Link>
               </article>
             ))}
           </div>
           <div className="mt-12 flex justify-center">
-            <button className="rounded-2xl bg-red-800 px-10 py-4 text-4xl text-white md:text-[2.2rem]">
+            <Link to="/produtos">
+            <button className="rounded-2xl bg-red-800 px-10 py-4 text-4xl text-white md:text-[2.2rem] cursor-pointer hover:bg-red-700">
               Ver todas as ofertas
             </button>
+            </Link>
           </div>
         </section>
 
