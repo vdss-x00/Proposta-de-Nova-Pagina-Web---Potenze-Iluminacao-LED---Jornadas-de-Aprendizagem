@@ -9,11 +9,8 @@ import luminariaFrigorifico from "../assets/luminaria_frigorifico.png";
 import Industriais from "../assets/luminaria_industrial.png";
 import IlumPubli from "../assets/luminaria_publica.png";
 import Refletor from "../assets/refletor_ultra.png";
-import potenze_1 from "../assets/PotenzeHero1.png";
-import potenze_2 from "../assets/potenze_2.png";
-import potenze_3 from "../assets/potenze_3.png";
-import potenze_4 from "../assets/potenze_4.png";
-import potenze_5 from "../assets/potenze_5.png";
+import potenze_1 from "../assets/PotenzeHero.png";
+
 
 const parceirosRaw = import.meta.glob("../assets/empresas/*.png", {
   eager: true,
@@ -204,7 +201,7 @@ function Home() {
     <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
       <main>
         <section className="relative overflow-hidden w-full bg-black max-w-[1400px] mx-auto h-[70vh] md:h-[85vh] rounded-2xl">
-          <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="absolute inset-0 z-10" />
           <img
             src={potenze_1}
             alt="Potenze"
