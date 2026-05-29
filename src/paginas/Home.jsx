@@ -1,13 +1,14 @@
-import highBay from "../assets/high_bay.png";
+import { Link } from "react-router-dom";
+import HighBay from "../assets/high_bay.png";
 import highBayModular from "../assets/high_bay_modular.png";
 import linearIp66 from "../assets/linear_ip66.png";
-import linearIp69k from "../assets/linear_ip69k.png";
+import Lineares from "../assets/linear_ip69k.png";
 import luminariaDeco from "../assets/luminaria_deco.png";
-import luminariaEx from "../assets/luminaria_ex.png";
+import EX from "../assets/luminaria_ex.png";
 import luminariaFrigorifico from "../assets/luminaria_frigorifico.png";
-import luminariaIndustrial from "../assets/luminaria_industrial.png";
-import luminariaPublica from "../assets/luminaria_publica.png";
-import refletorUltra from "../assets/refletor_ultra.png";
+import Industriais from "../assets/luminaria_industrial.png";
+import IlumPubli  from "../assets/luminaria_publica.png";
+import Refletor from "../assets/refletor_ultra.png";
 import potenze_1 from "../assets/potenze_1.png";
 import potenze_2 from "../assets/potenze_2.png";
 import potenze_3 from "../assets/potenze_3.png";
@@ -29,78 +30,122 @@ function chunkArray(items, chunkSize) {
 
 function Home() {
   const ofertas = [
-    {
-      nome: "Luminária Industrial",
-      detalhes: ["Potencia: 15W | 30W", "Grau de Protecao: IP69K"],
-      imagem: luminariaIndustrial,
-    },
-    {
-      nome: "Refletor Ultra",
-      detalhes: ["Potencia: de 50W ate 900W", "Grau de Protecao: IP67"],
-      imagem: refletorUltra,
-    },
-    {
-      nome: "Luminária High Bay",
-      detalhes: ["Potencia: 100W | 150W | 200W", "Grau de Protecao: IP67"],
-      imagem: highBay,
-    },
-    {
-      nome: "High Bay Modular",
-      detalhes: [
-        "Aplicacao: galpoes e centros logisticos",
-        "Consulte potencia e configuracoes",
-      ],
-      imagem: highBayModular,
-    },
-    {
-      nome: "Linear IP66",
-      detalhes: [
-        "Aplicacao: areas industriais internas",
-        "Protecao reforcada contra poeira e agua",
-      ],
-      imagem: linearIp66,
-    },
-    {
-      nome: "Linear IP69K",
-      detalhes: [
-        "Aplicacao: ambientes com higienizacao intensa",
-        "Alta resistencia para lavagem pressurizada",
-      ],
-      imagem: linearIp69k,
-    },
-    {
-      nome: "Luminária Deco",
-      detalhes: [
-        "Aplicacao: projetos arquitetonicos e decorativos",
-        "Consulte modelos e temperaturas de cor",
-      ],
-      imagem: luminariaDeco,
-    },
-    {
-      nome: "Luminária Ex",
-      detalhes: [
-        "Aplicacao: areas classificadas",
-        "Consulte certificacoes e configuracoes",
-      ],
-      imagem: luminariaEx,
-    },
-    {
-      nome: "Luminária Frigorífico",
-      detalhes: [
-        "Aplicacao: camaras frias e frigorificos",
-        "Projetada para baixas temperaturas",
-      ],
-      imagem: luminariaFrigorifico,
-    },
-    {
-      nome: "Luminária Pública",
-      detalhes: [
-        "Aplicacao: vias e areas externas",
-        "Consulte fotometria e opcoes de montagem",
-      ],
-      imagem: luminariaPublica,
-    },
-  ];
+      {
+        nome: "Luminária Industrial",
+        detalhes: [
+          "Potência: 15W | 30W", 
+          "Grau de Proteção: IP69K",
+          "Lúmens: 1.735lm | 3.470lm"
+        ],
+        imagem: Industriais,
+        filtro: "Industriais",
+        modelo: "Modelo PZ-IND",
+        especificacoes: [
+          {label: "Potência", value: "15W a 30W"},
+          {label: "Frequência", value: "50/60Hz"},
+          {label: "Temperatura de Cor", value: "5.000K"},
+          {label: "Garantia", value: "2 Anos"},
+          {label: "Ângulo de abertura do facho", value: "100º"},
+          {label: "Grau de Proteção", value: "IP69K"},
+          {label: "Grau de Resistência", value: "IK10"},
+        ],
+        destaques: [
+          {
+            texto: "Produto EX certificado",
+            imagem: EX,
+          },
+        ],
+      },
+      {
+        nome: "Refletor Ultra",
+        detalhes: [
+          "Potência: de 50W ate 900W", 
+          "Grau de Proteção: IP67",
+          "Lúmens: de 8.873lm ate 168.689lm"
+        ],
+        imagem: Refletor,
+        filtro: "Refletores",
+        modelo: "Modelo PZ-ULTRA"
+      },
+      {
+        nome: "Luminária High Bay",
+        detalhes: [
+          "Potência: 100W | 150W | 200W",
+          "Grau de Proteção: IP67",
+          "Lúmens: 15.042lm | 24.529lm | 31.757lm"
+        ],
+        imagem: HighBay,
+        filtro: "High Bay",
+        modelo: "Modelo PZ-HIGH"
+      },
+      {
+        nome: "High Bay Modular",
+        detalhes: [
+          "Potência: de 50W até 300W", 
+          "Grau de Proteção: IP67",
+          "Lúmens: de 8.873lm até 168.689lm"
+        ],
+        imagem: highBayModular,
+        filtro: "High Bay",
+        modelo: "Modelo PZ-ULTRA HB"
+      },
+      {
+        nome: "Linear IP66",
+        detalhes: [
+          "Potência: de 20W até 60W", 
+          "Grau de Proteção: IP66",
+          "Lúmens: de 3.000lm até 9.000lm"
+        ],
+        imagem: linearIp66,
+        filtro: "Lineares",
+        modelo: "Modelo PZ-HE"
+      },
+      {
+        nome: "Linear IP69K",
+        detalhes: [
+          "Potência: de 20W até 60W", 
+          "Grau de Proteção: IP69K",
+          "Lúmens: de 3.000lm até 9.000lm"
+        ],
+        imagem: Lineares,
+        filtro: "Lineares",
+        modelo: "Modelo PZ-HE IP"
+      },
+      {
+        nome: "Luminária Deco",
+        detalhes: [
+          "Potência: 50W | 70W | 100W", 
+          "Grau de Proteção: IP66",
+          "Lúmens: 8.775lm | 13.560lm | 17.946lm"
+        ],
+        imagem: luminariaDeco,
+        filtro: "Iluminação Pública",
+        modelo: "Modelo PZ-DECOR"
+      },
+      {
+        nome: "Luminária Ex",
+        detalhes: [
+          "Potência: 15W | 30W", 
+          "Grau de Proteção: IP69K",
+          "Lúmens: 1.735lm | 3.470lm"
+        ],
+        imagem: EX,
+        filtro: "EX",
+        modelo: "Modelo PZ-EX"
+      },
+      {
+        nome: "Luminária Frigorífico",
+        detalhes: [
+          "Potência: 15W | 30W", 
+          "Grau de Proteção: IP69K",
+          "Lúmens: 1.735lm | 3.470lm"
+        ],
+        imagem: luminariaFrigorifico,
+        filtro: "Industriais",
+        modelo: "Modelo PZ-FRIG"
+      }
+      
+    ];
 
   const parceiros = Object.entries(parceirosRaw)
     .sort(([pathA], [pathB]) =>
@@ -226,16 +271,23 @@ function Home() {
                     <li key={detalhe}>{detalhe}</li>
                   ))}
                 </ul>
-                <button className="mt-auto w-fit rounded-2xl bg-red-800 px-8 py-2 text-[2rem] leading-none text-white">
-                  Ver Oferta
-                </button>
+                <Link
+                  to={`/avalia-produto/${oferta.nome.toLowerCase().replace(/\s+/g, "-")}`}
+                  state={{ product: oferta }}
+                >
+                  <button className="mt-auto w-fit rounded-2xl bg-red-800 px-8 py-2 text-[2rem] leading-none text-white cursor-pointer hover:bg-red-700">
+                    Ver Oferta
+                  </button>
+                </Link>
               </article>
             ))}
           </div>
           <div className="mt-12 flex justify-center">
-            <button className="rounded-2xl bg-red-800 px-10 py-4 text-4xl text-white md:text-[2.2rem]">
+            <Link to="/produtos">
+            <button className="rounded-2xl bg-red-800 px-10 py-4 text-4xl text-white md:text-[2.2rem] cursor-pointer hover:bg-red-700">
               Ver todas as ofertas
             </button>
+            </Link>
           </div>
         </section>
 

@@ -68,18 +68,20 @@ function Carrinho() {
                   X
                 </button>
 
-                <div className="flex h-full flex-col justify-between">
+                <div className="flex h-full flex-col justify-between text-{currentColor}">
                   <img
                     src={item.imagem}
                     alt={item.nome}
                     className="mx-auto h-24 w-full object-contain"
                   />
                   <div className="mt-3">
-                    <p className="text-lg font-bold text-zinc-900">
+                    <p className="text-lg font-bold text-zinc-900 dark:text-[#fffafa]">
                       {item.nome}
                     </p>
-                    <p className="mt-1 text-sm text-zinc-600">{item.modelo}</p>
-                    <p className="mt-2 text-sm font-semibold text-zinc-900">
+                    <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
+                      {item.modelo}
+                    </p>
+                    <p className="mt-2 text-sm font-semibold text-zinc-900 dark:text-[#fffafa]">
                       Quantidade: {item.quantidade}
                     </p>
                   </div>

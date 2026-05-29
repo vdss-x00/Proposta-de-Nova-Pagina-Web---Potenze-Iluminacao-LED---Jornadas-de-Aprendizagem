@@ -4,25 +4,21 @@ import { Link, useLocation } from "react-router-dom";
 function AvaliaProduto() {
   const location = useLocation();
   const product = location.state?.product;
-  const [potenciaSelecionada, setPotenciaSelecionada] = useState(
-    product?.potencias?.[0] || "",
-  );
-  const [quantidadeSelecionada, setQuantidadeSelecionada] = useState(1);
+  const [quantidade, setQuantidade] = useState(1);
 
   const adicionarAoCarrinho = () => {
+    const quantidadeSelecionada = Math.min(Math.max(Number(quantidade) || 1, 1), 100);
     const carrinhoAtual = JSON.parse(
       localStorage.getItem("potenze_carrinho") || "[]",
     );
-    const itemId = `${product.nome}-${potenciaSelecionada}`;
-    const itemExistente = carrinhoAtual.find((item) => item.id === itemId);
+    const itemExistente = carrinhoAtual.find(
+      (item) => item.id === product.nome,
+    );
 
     if (itemExistente) {
       const carrinhoAtualizado = carrinhoAtual.map((item) =>
-        item.id === itemId
-          ? {
-              ...item,
-              quantidade: item.quantidade + quantidadeSelecionada,
-            }
+        item.id === product.nome
+          ? { ...item, quantidade: item.quantidade + quantidadeSelecionada }
           : item,
       );
       localStorage.setItem(
@@ -31,11 +27,10 @@ function AvaliaProduto() {
       );
     } else {
       const novoItem = {
-        id: `${product.nome}-${potenciaSelecionada}`,
+        id: product.nome,
         nome: product.nome,
         modelo: product.modelo,
         imagem: product.imagem,
-        potencia: potenciaSelecionada,
         quantidade: quantidadeSelecionada,
       };
       localStorage.setItem(
@@ -47,30 +42,24 @@ function AvaliaProduto() {
     window.dispatchEvent(new Event("cartUpdated"));
   };
 
-  const especificacoes = [
-    "Potência",
-    "Lúmens",
-    "Frequência",
-    "Temperatura de Cor",
-    "Garantia",
-    "Ângulo de abertura do facho",
-    "Grau de Proteção",
-    "Grau de Resistência",
-  ];
+  const especificacoes = product.especificacoes || [];
+  const detalhes = product.detalhes || [];
+  const destaques = product.destaques || [];
 
   if (!product) {
     return (
       <div className="min-h-screen bg-zinc-100 px-6 py-12 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
         <div className="mx-auto max-w-4xl rounded-2xl border border-red-700 bg-white p-8 shadow-sm dark:bg-[#1f1f1f]">
-          <p className="text-lg text-zinc-600 dark:text-zinc-300">
-            Produto não encontrado.
-          </p>
-          <Link
-            to="/produtos"
-            className="mt-6 inline-flex rounded-full bg-[#9f1523] px-5 py-2 text-white"
-          >
-            Voltar aos produtos
-          </Link>
+          <div className="grid gap-10 lg:grid-cols-[1.2fr_0.95fr] items-start">
+            <section className="rounded-[32px] border border-red-700 bg-white p-6 shadow-sm">
+              <Link
+                to="/produtos"
+                className="mt-6 inline-flex rounded-full bg-[#9f1523] px-5 py-2 text-white"
+              >
+                Voltar aos produtos
+              </Link>
+            </section>
+          </div>
         </div>
       </div>
     );
@@ -79,9 +68,9 @@ function AvaliaProduto() {
   return (
     <div className="min-h-screen bg-zinc-100 px-6 py-10 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
       <div className="mx-auto max-w-6xl">
-        <div className="mt-6 grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
-          <section className="rounded-3xl border border-red-700 bg-white p-6 shadow-sm dark:bg-[#1f1f1f]">
-            <div className="flex h-full min-h-[360px] w-full items-center justify-center rounded-2xl bg-zinc-100 p-6 dark:bg-[#303030]">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.95fr] items-start">
+          <section className="rounded-[32px] border border-red-700 bg-white p-6 shadow-sm">
+            <div className="h-[320px] overflow-hidden rounded-[28px] bg-zinc-100 p-6">
               <img
                 src={product.imagem}
                 alt={product.nome}
@@ -230,52 +219,46 @@ function AvaliaProduto() {
           </a>
         </div>
 
-        <h1 className="mt-8 text-4xl font-bold">Especificações do Produto</h1>
+        <h1 className="mt-2 text-4xl font-bold mt-5">
+          Especificações do Produto
+        </h1>
 
         <div className="mt-8 grid overflow-hidden rounded-none border border-black">
-          {especificacoes.map((item, index) => (
-            <div
-              key={item}
-              className={`grid grid-cols-2 border-b border-black last:border-b-0 ${
-                index % 2 === 0 ? "bg-[#ffffff]" : "bg-[#f6f6f6]"
-              }`}
-            >
-              <div className="border-r border-black px-4 py-3 text-sm font-medium text-zinc-900">
-                {item}
-              </div>
-              <div className="px-4 py-3 text-sm text-zinc-600"></div>
-            </div>
-          ))}
-        </div>
+          {especificacoes.map((item, index) => {
+            const label = typeof item === "string" ? item : item.label;
+            const value = typeof item === "string" ? "" : item.value;
 
-        <div className="mt-10 flex justify-center">
-          <div className="flex w-full max-w-4xl items-center justify-between gap-6">
-            <Link
-              to="/produtos"
-              className="inline-flex rounded-full border border-red-700 px-5 py-2.5 text-sm font-semibold text-{currentColor} hover:bg-red-700 hover:text-white"
-            >
-              Voltar aos produtos
-            </Link>
-
-            <button
-              onClick={adicionarAoCarrinho}
-              className="inline-flex items-center justify-center gap-3 rounded-lg bg-[#9f1523] px-6 py-3 text-white transition-colors hover:bg-[#7a1019]"
-            >
-              Adicionar ao Carrinho
-              <svg
-                viewBox="0 0 24 24"
-                className="h-6 w-6"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.8"
+            return (
+              <div
+                key={label}
+                className={`grid grid-cols-2 border-b border-black last:border-b-0 ${
+                  index % 2 === 0 ? "bg-[#ffffff]" : "bg-[#f6f6f6]"
+                }`}
               >
-                <circle cx="9" cy="20" r="1.6" />
-                <circle cx="18" cy="20" r="1.6" />
-                <path d="M2 3h3l2.2 10h11l2-7.2H6.1" />
-              </svg>
-            </button>
-          </div>
+                <div className="border-r border-black px-4 py-3 text-sm font-medium text-zinc-900">
+                  {label}
+                </div>
+                <div className="px-4 py-3 text-sm text-zinc-600">{value}</div>
+              </div>
+            );
+          })}
         </div>
+
+        <h1 className="mt-2 text-4xl font-bold mt-5">
+          Destaques
+        </h1>
+        
+        {destaques.length > 0 && (
+          <div className="mt-10 space-y-4">
+            {destaques.map((item) => (
+              <div key={item.texto} className="flex gap-4 rounded-3xl border border-zinc-200 bg-white p-4">
+                {item.imagem && (
+                  <img src={item.imagem} alt={item.texto} className="h-full w-full object-contain" />
+                )}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
