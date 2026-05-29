@@ -52,7 +52,9 @@ function Produtos() {
           imagem: DestaqueLuminariaIndustrial,
         },
       ],
-      potencias: ["15W", "30W"]
+      potencias: ["15W", "30W"],
+      garantia: "2 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-PZ-IND-1.pdf"
     },
     {
       nome: "Refletor Ultra",
@@ -73,7 +75,9 @@ function Produtos() {
       imagem: Refletor,
       filtro: "Refletores",
       modelo: "Modelo PZ-ULTRA",
-      potencias: ["50W", "100W", "150W", "200W", "300W", "400W", "600W", "900W"]
+      potencias: ["50W", "100W", "150W", "200W", "300W", "400W", "600W", "900W"],
+      garantia: "2 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-REFLETOR-MODULAR-1.pdf"
     },
     {
       nome: "Luminária High Bay",
@@ -94,7 +98,9 @@ function Produtos() {
       imagem: HighBay,
       filtro: "High Bay",
       modelo: "Modelo PZ-HIGH",
-      potencias: ["100W", "150W", "200W"]
+      potencias: ["100W", "150W", "200W"],
+      garantia: "5 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-PZ-HIGH.pdf"
     },
     {
       nome: "High Bay Modular",
@@ -115,7 +121,9 @@ function Produtos() {
       imagem: highBayModular,
       filtro: "High Bay",
       modelo: "Modelo PZ-ULTRA HB",
-      potencias: ["50W", "100W", "150W", "200W", "300W"]
+      potencias: ["50W", "100W", "150W", "200W", "300W"],
+      garantia: "5 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-HIGH-MODULAR-1.pdf"
     },
     {
       nome: "Linear IP66",
@@ -136,7 +144,9 @@ function Produtos() {
       imagem: linearIp66,
       filtro: "Lineares",
       modelo: "Modelo PZ-HE",
-      potencias: ["20W", "40W", "50W", "60W"]
+      potencias: ["20W", "40W", "50W", "60W"],
+      garantia: "3 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-PZ-Hermetica-IP66-1.pdf"
     },
     {
       nome: "Linear IP69K",
@@ -157,7 +167,9 @@ function Produtos() {
       imagem: Lineares,
       filtro: "Lineares",
       modelo: "Modelo PZ-HE IP",
-      potencias: ["20W", "40W", "50W", "60W"]
+      potencias: ["20W", "40W", "50W", "60W"],
+      garantia: "3 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-PZ-Hermetica-IP69K-1.pdf"
     },
     {
       nome: "Luminária Deco",
@@ -178,7 +190,9 @@ function Produtos() {
       imagem: luminariaDeco,
       filtro: "Iluminação Pública",
       modelo: "Modelo PZ-DECOR",
-      potencias: ["20W", "40W", "50W", "60W"]
+      potencias: ["20W", "40W", "50W", "60W"],
+      garantia: "2 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-PZ-DECOR-1.pdf"
     },
     {
       nome: "Luminária Ex",
@@ -199,7 +213,9 @@ function Produtos() {
         {label: "Grau de Proteção", value: "IP69K"},
         {label: "Grau de Resistência", value: "IK10"},
       ],
-      potencias: ["15W", "30W"]
+      potencias: ["15W", "30W"],
+      garantia: "2 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-PZ-EX.pdf"
     },
     {
       nome: "Luminária Frigorífico",
@@ -220,7 +236,9 @@ function Produtos() {
         {label: "Grau de Proteção", value: "IP69K"},
         {label: "Grau de Resistência", value: "IK10"},
       ],
-      potencias: ["15W", "30W"]
+      potencias: ["15W", "30W"],
+      garantia: "2 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-PZ-FRIG-1.pdf"
     },
     {
       nome: "Luminária Pública",
@@ -241,7 +259,9 @@ function Produtos() {
       imagem: IlumPubli,
       filtro: "Iluminação Pública",
       modelo: "Modelo PZ-PUBLIC",
-      potencias: ["55W", "75W", "100W", "150W", "200W"]
+      potencias: ["55W", "75W", "100W", "150W", "200W"],
+      garantia: "5 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-PZ-PUBLIC-1.pdf"
     },
   ];
   const [activeIndex, setActiveIndex] = useState(null);
