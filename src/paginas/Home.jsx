@@ -9,7 +9,7 @@ import luminariaFrigorifico from "../assets/luminaria_frigorifico.png";
 import Industriais from "../assets/luminaria_industrial.png";
 import IlumPubli from "../assets/luminaria_publica.png";
 import Refletor from "../assets/refletor_ultra.png";
-import potenze_1 from "../assets/potenze_1.png";
+import potenze_1 from "../assets/PotenzeHero1.png";
 import potenze_2 from "../assets/potenze_2.png";
 import potenze_3 from "../assets/potenze_3.png";
 import potenze_4 from "../assets/potenze_4.png";
@@ -204,58 +204,12 @@ function Home() {
     <div className="min-h-screen bg-zinc-100 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
       <main>
         <section className="relative overflow-hidden w-full bg-black max-w-[1400px] mx-auto h-[70vh] md:h-[85vh] rounded-2xl">
-          <div className="flex w-[600%] h-full animate-slide relative">
-            <div className="absolute inset-0 bg-black/40 z-10"></div>
-            <div className="w-1/6 h-full flex-shrink-0">
-              <img
-                src={potenze_1}
-                className="w-full h-full object-cover scale-105 hover:scale-110 transition-all duration-[4000ms]"
-                alt="Potenze 1"
-              />
-            </div>
-
-            <div className="w-1/6 h-full flex-shrink-0">
-              <img
-                src={potenze_2}
-                className="w-full h-full object-cover"
-                alt="Potenze 2"
-              />
-            </div>
-
-            <div className="w-1/6 h-full flex-shrink-0">
-              <img
-                src={potenze_3}
-                className="w-full h-full object-cover"
-                alt="Potenze 3"
-              />
-            </div>
-
-            <div className="w-1/6 h-full flex-shrink-0">
-              <img
-                src={potenze_4}
-                className="w-full h-full object-cover"
-                alt="Potenze 4"
-              />
-            </div>
-
-            <div className="w-1/6 h-full flex-shrink-0">
-              <img
-                src={potenze_5}
-                class="w-full h-full object-cover"
-                alt="Potenze 5"
-              />
-            </div>
-
-            <div className="w-1/6 h-full flex-shrink-0">
-              <img
-                src={potenze_1}
-                className="w-full h-full object-cover"
-                alt="Potenze 1 Loop"
-              />
-            </div>
-          </div>
-
-          <div className="absolute bottom-0 left-0 h-[5px] bg-[#9f1523] animate-progress"></div>
+          <div className="absolute inset-0 bg-black/40 z-10" />
+          <img
+            src={potenze_1}
+            alt="Potenze"
+            className="w-full h-full object-cover"
+          />
         </section>
 
         <section className="bg-zinc-200 dark:bg-black/50 text-zinc-900 dark:text-white py-24 px-6">
