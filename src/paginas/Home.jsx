@@ -55,6 +55,7 @@ function Home() {
             imagem: EX,
           },
         ],
+        potencias: ["15W", "30W"]
       },
       {
         nome: "Refletor Ultra",
@@ -65,7 +66,8 @@ function Home() {
         ],
         imagem: Refletor,
         filtro: "Refletores",
-        modelo: "Modelo PZ-ULTRA"
+        modelo: "Modelo PZ-ULTRA",
+        potencias: ["50W", "100W", "150W", "200W", "300W", "400W", "600W", "900W"]
       },
       {
         nome: "Luminária High Bay",
@@ -76,7 +78,8 @@ function Home() {
         ],
         imagem: HighBay,
         filtro: "High Bay",
-        modelo: "Modelo PZ-HIGH"
+        modelo: "Modelo PZ-HIGH",
+        potencias: ["100W", "150W", "200W"]
       },
       {
         nome: "High Bay Modular",

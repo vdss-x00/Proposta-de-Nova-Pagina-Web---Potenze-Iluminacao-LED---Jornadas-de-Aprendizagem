@@ -52,6 +52,7 @@ function Produtos() {
           imagem: DestaqueLuminariaIndustrial,
         },
       ],
+      potencias: ["15W", "30W"]
     },
     {
       nome: "Refletor Ultra",
@@ -62,7 +63,8 @@ function Produtos() {
       ],
       imagem: Refletor,
       filtro: "Refletores",
-      modelo: "Modelo PZ-ULTRA"
+      modelo: "Modelo PZ-ULTRA",
+      potencias: ["50W", "100W", "150W", "200W", "300W", "400W", "600W", "900W"]
     },
     {
       nome: "Luminária High Bay",
@@ -73,7 +75,8 @@ function Produtos() {
       ],
       imagem: HighBay,
       filtro: "High Bay",
-      modelo: "Modelo PZ-HIGH"
+      modelo: "Modelo PZ-HIGH",
+      potencias: ["100W", "150W", "200W"]
     },
     {
       nome: "High Bay Modular",
@@ -84,7 +87,8 @@ function Produtos() {
       ],
       imagem: highBayModular,
       filtro: "High Bay",
-      modelo: "Modelo PZ-ULTRA HB"
+      modelo: "Modelo PZ-ULTRA HB",
+      potencias: ["50W", "100W", "150W", "200W", "300W"]
     },
     {
       nome: "Linear IP66",
@@ -95,7 +99,8 @@ function Produtos() {
       ],
       imagem: linearIp66,
       filtro: "Lineares",
-      modelo: "Modelo PZ-HE"
+      modelo: "Modelo PZ-HE",
+      potencias: ["20W", "40W", "50W", "60W"]
     },
     {
       nome: "Linear IP69K",
@@ -106,7 +111,8 @@ function Produtos() {
       ],
       imagem: Lineares,
       filtro: "Lineares",
-      modelo: "Modelo PZ-HE IP"
+      modelo: "Modelo PZ-HE IP",
+      potencias: ["20W", "40W", "50W", "60W"]
     },
     {
       nome: "Luminária Deco",
@@ -117,7 +123,8 @@ function Produtos() {
       ],
       imagem: luminariaDeco,
       filtro: "Iluminação Pública",
-      modelo: "Modelo PZ-DECOR"
+      modelo: "Modelo PZ-DECOR",
+      potencias: ["20W", "40W", "50W", "60W"]
     },
     {
       nome: "Luminária Ex",
@@ -128,7 +135,8 @@ function Produtos() {
       ],
       imagem: EX,
       filtro: "EX",
-      modelo: "Modelo PZ-EX"
+      modelo: "Modelo PZ-EX",
+      potencias: ["15W", "30W"]
     },
     {
       nome: "Luminária Frigorífico",
@@ -139,7 +147,8 @@ function Produtos() {
       ],
       imagem: luminariaFrigorifico,
       filtro: "Industriais",
-      modelo: "Modelo PZ-FRIG"
+      modelo: "Modelo PZ-FRIG",
+      potencias: ["15W", "30W"]
     },
     {
       nome: "Luminária Pública",
@@ -150,7 +159,8 @@ function Produtos() {
       ],
       imagem: IlumPubli,
       filtro: "Iluminação Pública",
-      modelo: "Modelo PZ-PUBLIC"
+      modelo: "Modelo PZ-PUBLIC",
+      potencias: ["55W", "75W", "100W", "150W", "200W"]
     },
   ];
   const [activeIndex, setActiveIndex] = useState(null);
