@@ -7,7 +7,7 @@ import luminariaDeco from "../assets/luminaria_deco.png";
 import EX from "../assets/luminaria_ex.png";
 import luminariaFrigorifico from "../assets/luminaria_frigorifico.png";
 import Industriais from "../assets/luminaria_industrial.png";
-import IlumPubli  from "../assets/luminaria_publica.png";
+import IlumPubli from "../assets/luminaria_publica.png";
 import Refletor from "../assets/refletor_ultra.png";
 import potenze_1 from "../assets/potenze_1.png";
 import potenze_2 from "../assets/potenze_2.png";
@@ -30,125 +30,164 @@ function chunkArray(items, chunkSize) {
 
 function Home() {
   const ofertas = [
-      {
-        nome: "Luminária Industrial",
-        detalhes: [
-          "Potência: 15W | 30W", 
-          "Grau de Proteção: IP69K",
-          "Lúmens: 1.735lm | 3.470lm"
-        ],
-        imagem: Industriais,
-        filtro: "Industriais",
-        modelo: "Modelo PZ-IND",
-        especificacoes: [
-          {label: "Potência", value: "15W a 30W"},
-          {label: "Frequência", value: "50/60Hz"},
-          {label: "Temperatura de Cor", value: "5.000K"},
-          {label: "Garantia", value: "2 Anos"},
-          {label: "Ângulo de abertura do facho", value: "100º"},
-          {label: "Grau de Proteção", value: "IP69K"},
-          {label: "Grau de Resistência", value: "IK10"},
-        ],
-        destaques: [
-          {
-            texto: "Produto EX certificado",
-            imagem: EX,
-          },
-        ],
-        potencias: ["15W", "30W"]
-      },
-      {
-        nome: "Refletor Ultra",
-        detalhes: [
-          "Potência: de 50W ate 900W", 
-          "Grau de Proteção: IP67",
-          "Lúmens: de 8.873lm ate 168.689lm"
-        ],
-        imagem: Refletor,
-        filtro: "Refletores",
-        modelo: "Modelo PZ-ULTRA",
-        potencias: ["50W", "100W", "150W", "200W", "300W", "400W", "600W", "900W"]
-      },
-      {
-        nome: "Luminária High Bay",
-        detalhes: [
-          "Potência: 100W | 150W | 200W",
-          "Grau de Proteção: IP67",
-          "Lúmens: 15.042lm | 24.529lm | 31.757lm"
-        ],
-        imagem: HighBay,
-        filtro: "High Bay",
-        modelo: "Modelo PZ-HIGH",
-        potencias: ["100W", "150W", "200W"]
-      },
-      {
-        nome: "High Bay Modular",
-        detalhes: [
-          "Potência: de 50W até 300W", 
-          "Grau de Proteção: IP67",
-          "Lúmens: de 8.873lm até 168.689lm"
-        ],
-        imagem: highBayModular,
-        filtro: "High Bay",
-        modelo: "Modelo PZ-ULTRA HB"
-      },
-      {
-        nome: "Linear IP66",
-        detalhes: [
-          "Potência: de 20W até 60W", 
-          "Grau de Proteção: IP66",
-          "Lúmens: de 3.000lm até 9.000lm"
-        ],
-        imagem: linearIp66,
-        filtro: "Lineares",
-        modelo: "Modelo PZ-HE"
-      },
-      {
-        nome: "Linear IP69K",
-        detalhes: [
-          "Potência: de 20W até 60W", 
-          "Grau de Proteção: IP69K",
-          "Lúmens: de 3.000lm até 9.000lm"
-        ],
-        imagem: Lineares,
-        filtro: "Lineares",
-        modelo: "Modelo PZ-HE IP"
-      },
-      {
-        nome: "Luminária Deco",
-        detalhes: [
-          "Potência: 50W | 70W | 100W", 
-          "Grau de Proteção: IP66",
-          "Lúmens: 8.775lm | 13.560lm | 17.946lm"
-        ],
-        imagem: luminariaDeco,
-        filtro: "Iluminação Pública",
-        modelo: "Modelo PZ-DECOR"
-      },
-      {
-        nome: "Luminária Ex",
-        detalhes: [
-          "Potência: 15W | 30W", 
-          "Grau de Proteção: IP69K",
-          "Lúmens: 1.735lm | 3.470lm"
-        ],
-        imagem: EX,
-        filtro: "EX",
-        modelo: "Modelo PZ-EX"
-      },
-      {
-        nome: "Luminária Frigorífico",
-        detalhes: [
-          "Potência: 15W | 30W", 
-          "Grau de Proteção: IP69K",
-          "Lúmens: 1.735lm | 3.470lm"
-        ],
-        imagem: luminariaFrigorifico,
-        filtro: "Industriais",
-        modelo: "Modelo PZ-FRIG"
-      }
-      
-    ];
+    {
+      nome: "Luminária Industrial",
+      detalhes: [
+        "Potência: 15W | 30W",
+        "Grau de Proteção: IP69K",
+        "Lúmens: 1.735lm | 3.470lm",
+      ],
+      imagem: Industriais,
+      filtro: "industriais",
+      modelo: "Modelo PZ-IND",
+      especificacoes: [
+        { label: "Potência", value: "15W a 30W" },
+        { label: "Lúmens", value: "1.735lm a 3.470lm" },
+        { label: "Frequência", value: "50/60Hz" },
+        { label: "Temperatura de Cor", value: "5.000K" },
+        { label: "Garantia", value: "2 Anos" },
+        { label: "Ângulo de abertura do facho", value: "100º" },
+        { label: "Grau de Proteção", value: "IP69K" },
+        { label: "Grau de Resistência", value: "IK10" },
+      ],
+      potencias: ["15W", "30W"],
+      garantia: "2 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-PZ-IND-1.pdf",
+      descricao: `As luminárias Industriais LED da Potenze são projetadas para suportar ambientes agressivos,
+                garantindo alta performance e durabilidade. Com estrutura robusta, materiais resistentes a
+                corrosão e proteção IP69K, são à prova d’água e poeira, ideais para locais que exigem iluminação
+                confiável. Seja em máquinas de usinagens, tornos, fresas ou outros ambientes hostis, as
+                luminárias Potenze oferecem eficiência, resistência e baixo índice de manutenção.`,
+    },
+    {
+      nome: "Refletor Ultra",
+      detalhes: [
+        "Potência: de 50W ate 900W",
+        "Grau de Proteção: IP67",
+        "Lúmens: de 8.873lm ate 168.689lm",
+      ],
+      especificacoes: [
+        { label: "Potência", value: "50W a 900W" },
+        { label: "Lúmens", value: "8.873lm a 168.689lm" },
+        { label: "Frequência", value: "47 - 63Hz" },
+        { label: "Temperatura de Cor", value: "5.000K" },
+        { label: "Garantia", value: "5 Anos" },
+        { label: "Ângulo de abertura do facho", value: "-" },
+        { label: "Grau de Proteção", value: "IP67" },
+        { label: "Grau de Resistência", value: "IK08" },
+      ],
+      imagem: Refletor,
+      filtro: "refletores",
+      modelo: "Modelo PZ-ULTRA",
+      potencias: [
+        "50W",
+        "100W",
+        "150W",
+        "200W",
+        "300W",
+        "400W",
+        "600W",
+        "900W",
+      ],
+      garantia: "5 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-REFLETOR-MODULAR-1.pdf",
+      descricao: `Os refletores ULTRA LED são projetados para oferecer uma iluminação potente e uniforme
+              em grandes áreas. Com carcaça robusta, acabamento em pintura epóxi e lente de
+              policarbonato, nossos refletores proporcionam segurança resistência e durabilidade.
+              Possuem uma vida útil de 102.000 horas sendo eficientes em termos de energia,
+              extremamente duráveis e de fácil instalação.`,
+    },
+    {
+      nome: "High Bay Modular",
+      detalhes: [
+        "Potência: de 50W até 300W",
+        "Grau de Proteção: IP67",
+        "Lúmens: de 8.873lm até 168.689lm",
+      ],
+      especificacoes: [
+        { label: "Potência", value: "50W a 300W" },
+        { label: "Lúmens", value: "8.873lm a 168.689lm" },
+        { label: "Frequência", value: "47 - 63Hz" },
+        { label: "Temperatura de Cor", value: "5.000K" },
+        { label: "Garantia", value: "5 Anos" },
+        {
+          label: "Ângulo de abertura do facho",
+          value: "30º, 60º, 90º(Padrão) ou 120º",
+        },
+        { label: "Grau de Proteção", value: "IP67" },
+        { label: "Grau de Resistência", value: "IK08" },
+      ],
+      imagem: highBayModular,
+      filtro: "highbay",
+      modelo: "Modelo PZ-ULTRA HB",
+      potencias: ["50W", "100W", "150W", "200W", "300W"],
+      garantia: "5 Anos de Garantia",
+      link: "https://potenze.com.br/wp-content/uploads/2026/03/FOLDER-HIGH-MODULAR-1.pdf",
+      descricao: `As luminárias High Bay Modulares garantem alta performance e eficiência em ambientes
+              industriais, com vida útil de até 102.000 horas. Seu design leve e eficiente permite substituir
+              luminárias tradicionais com mais economia e desempenho. Um dos grandes diferenciais é a
+              versatilidade da linha modular, que oferece diferentes potências mantendo o mesmo design,
+              permitindo padronização estética e flexibilidade para atender diversas necessidades de
+              iluminação dentro de um mesmo projeto. Com excelente uniformidade luminosa e alto
+              rendimento, proporcionam ambientes mais seguros e bem iluminados, sendo uma solução
+              vesátil para armazéns, hangares, indústrias e instalações em grandes alturas.`,
+    },
+    {
+      nome: "Linear IP66",
+      detalhes: [
+        "Potência: de 20W até 60W",
+        "Grau de Proteção: IP66",
+        "Lúmens: de 3.000lm até 9.000lm",
+      ],
+      imagem: linearIp66,
+      filtro: "Lineares",
+      modelo: "Modelo PZ-HE",
+    },
+    {
+      nome: "Linear IP69K",
+      detalhes: [
+        "Potência: de 20W até 60W",
+        "Grau de Proteção: IP69K",
+        "Lúmens: de 3.000lm até 9.000lm",
+      ],
+      imagem: Lineares,
+      filtro: "Lineares",
+      modelo: "Modelo PZ-HE IP",
+    },
+    {
+      nome: "Luminária Deco",
+      detalhes: [
+        "Potência: 50W | 70W | 100W",
+        "Grau de Proteção: IP66",
+        "Lúmens: 8.775lm | 13.560lm | 17.946lm",
+      ],
+      imagem: luminariaDeco,
+      filtro: "Iluminação Pública",
+      modelo: "Modelo PZ-DECOR",
+    },
+    {
+      nome: "Luminária Ex",
+      detalhes: [
+        "Potência: 15W | 30W",
+        "Grau de Proteção: IP69K",
+        "Lúmens: 1.735lm | 3.470lm",
+      ],
+      imagem: EX,
+      filtro: "EX",
+      modelo: "Modelo PZ-EX",
+    },
+    {
+      nome: "Luminária Frigorífico",
+      detalhes: [
+        "Potência: 15W | 30W",
+        "Grau de Proteção: IP69K",
+        "Lúmens: 1.735lm | 3.470lm",
+      ],
+      imagem: luminariaFrigorifico,
+      filtro: "Industriais",
+      modelo: "Modelo PZ-FRIG",
+    },
+  ];
 
   const parceiros = Object.entries(parceirosRaw)
     .sort(([pathA], [pathB]) =>
@@ -288,9 +327,9 @@ function Home() {
           </div>
           <div className="mt-12 flex justify-center">
             <Link to="/produtos">
-            <button className="rounded-2xl bg-red-800 px-10 py-4 text-4xl text-white md:text-[2.2rem] cursor-pointer hover:bg-red-700">
-              Ver todas as ofertas
-            </button>
+              <button className="rounded-2xl bg-red-800 px-10 py-4 text-4xl text-white md:text-[2.2rem] cursor-pointer hover:bg-red-700">
+                Ver todas as ofertas
+              </button>
             </Link>
           </div>
         </section>
