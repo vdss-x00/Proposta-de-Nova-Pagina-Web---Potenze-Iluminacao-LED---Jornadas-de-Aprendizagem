@@ -4,10 +4,10 @@ import { Link, useLocation } from "react-router-dom";
 function AvaliaProduto() {
   const location = useLocation();
   const product = location.state?.product;
-  const [quantidade, setQuantidade] = useState(1);
+  const [quantidadeSelecionada, setQuantidadeSelecionada] = useState(1);
 
   const adicionarAoCarrinho = () => {
-    const quantidadeSelecionada = Math.min(Math.max(Number(quantidade) || 1, 1), 100);
+    const quantidadeSelecionada = Math.min(Math.max(Number(quantidadeSelecionada) || 1, 1), 100);
     const carrinhoAtual = JSON.parse(
       localStorage.getItem("potenze_carrinho") || "[]",
     );
