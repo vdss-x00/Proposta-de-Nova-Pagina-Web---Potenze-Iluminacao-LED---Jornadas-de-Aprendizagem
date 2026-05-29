@@ -61,6 +61,15 @@ function Produtos() {
         "Grau de Proteção: IP67",
         "Lúmens: de 8.873lm ate 168.689lm"
       ],
+      especificacoes: [
+        {label: "Potência", value: "15W a 30W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP69K"},
+        {label: "Grau de Resistência", value: "IK10"},
+      ],
       imagem: Refletor,
       filtro: "Refletores",
       modelo: "Modelo PZ-ULTRA",
@@ -72,6 +81,15 @@ function Produtos() {
         "Potência: 100W | 150W | 200W",
         "Grau de Proteção: IP67",
         "Lúmens: 15.042lm | 24.529lm | 31.757lm"
+      ],
+      especificacoes: [
+        {label: "Potência", value: "15W a 30W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP69K"},
+        {label: "Grau de Resistência", value: "IK10"},
       ],
       imagem: HighBay,
       filtro: "High Bay",
@@ -85,6 +103,15 @@ function Produtos() {
         "Grau de Proteção: IP67",
         "Lúmens: de 8.873lm até 168.689lm"
       ],
+      especificacoes: [
+        {label: "Potência", value: "15W a 30W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP69K"},
+        {label: "Grau de Resistência", value: "IK10"},
+      ],
       imagem: highBayModular,
       filtro: "High Bay",
       modelo: "Modelo PZ-ULTRA HB",
@@ -96,6 +123,15 @@ function Produtos() {
         "Potência: de 20W até 60W", 
         "Grau de Proteção: IP66",
         "Lúmens: de 3.000lm até 9.000lm"
+      ],
+      especificacoes: [
+        {label: "Potência", value: "20W a 60W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP66"},
+        {label: "Grau de Resistência", value: "IK10"},
       ],
       imagem: linearIp66,
       filtro: "Lineares",
@@ -109,6 +145,15 @@ function Produtos() {
         "Grau de Proteção: IP69K",
         "Lúmens: de 3.000lm até 9.000lm"
       ],
+      especificacoes: [
+        {label: "Potência", value: "15W a 30W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP69K"},
+        {label: "Grau de Resistência", value: "IK10"},
+      ],
       imagem: Lineares,
       filtro: "Lineares",
       modelo: "Modelo PZ-HE IP",
@@ -120,6 +165,15 @@ function Produtos() {
         "Potência: 50W | 70W | 100W", 
         "Grau de Proteção: IP66",
         "Lúmens: 8.775lm | 13.560lm | 17.946lm"
+      ],
+      especificacoes: [
+        {label: "Potência", value: "15W a 30W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP69K"},
+        {label: "Grau de Resistência", value: "IK10"},
       ],
       imagem: luminariaDeco,
       filtro: "Iluminação Pública",
@@ -136,6 +190,15 @@ function Produtos() {
       imagem: EX,
       filtro: "EX",
       modelo: "Modelo PZ-EX",
+      especificacoes: [
+        {label: "Potência", value: "15W a 30W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP69K"},
+        {label: "Grau de Resistência", value: "IK10"},
+      ],
       potencias: ["15W", "30W"]
     },
     {
@@ -148,6 +211,15 @@ function Produtos() {
       imagem: luminariaFrigorifico,
       filtro: "Industriais",
       modelo: "Modelo PZ-FRIG",
+      especificacoes: [
+        {label: "Potência", value: "15W a 30W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP69K"},
+        {label: "Grau de Resistência", value: "IK10"},
+      ],
       potencias: ["15W", "30W"]
     },
     {
@@ -156,6 +228,15 @@ function Produtos() {
         "Potência: de 55W até 200W", 
         "Grau de Proteção: IP66",
         "Lúmens: de 10.019lm até 34.987lm"
+      ],
+      especificacoes: [
+        {label: "Potência", value: "15W a 30W"},
+        {label: "Frequência", value: "50/60Hz"},
+        {label: "Temperatura de Cor", value: "5.000K"},
+        {label: "Garantia", value: "2 Anos"},
+        {label: "Ângulo de abertura do facho", value: "100º"},
+        {label: "Grau de Proteção", value: "IP69K"},
+        {label: "Grau de Resistência", value: "IK10"},
       ],
       imagem: IlumPubli,
       filtro: "Iluminação Pública",
@@ -237,11 +318,11 @@ function Produtos() {
               <h3 className="min-h-[5.5rem] text-[2rem] font-bold leading-tight">
                 {oferta.nome}
               </h3>
-              <ul className="mt-3 min-h-[4.5rem] space-y-1.5 text-[1rem] leading-snug text-{currentColor}">
-                {oferta.detalhes.map((detalhe) => (
-                  <li key={detalhe}>{detalhe}</li>
-                ))}
-              </ul>
+              <ul className="mt-3 min-h-[5.25rem] space-y-1.5 text-[1.05rem] leading-snug text-zinc-600">
+                  {oferta.detalhes.map((detalhe) => (
+                    <li key={detalhe}>{detalhe}</li>
+                  ))}
+                </ul>
               <Link
                 to={`/avalia-produto/${index}`}
                 state={{ product: oferta }}
