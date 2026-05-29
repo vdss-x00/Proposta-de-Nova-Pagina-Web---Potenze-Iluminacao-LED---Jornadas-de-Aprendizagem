@@ -160,9 +160,9 @@ function AvaliaProduto() {
 
                   {/* 2. Botão Ficha Técnica (Lado Direito) */}
                   <a
-                    href="#"
+                    href={product.link}
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noopener noreferrer"
                     className="inline-flex w-fit items-center gap-2 rounded-lg bg-[#8f1a22] px-4 py-2 text-sm font-medium text-white hover:bg-[#7a1019]"
                   >
                     <span>Ficha Técnica</span>
