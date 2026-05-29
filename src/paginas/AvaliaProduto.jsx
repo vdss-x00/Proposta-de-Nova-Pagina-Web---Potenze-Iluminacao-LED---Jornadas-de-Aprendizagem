@@ -10,7 +10,11 @@ function AvaliaProduto() {
   );
 
   const adicionarAoCarrinho = () => {
-    const quantidadeSelecionada = Math.min(Math.max(Number(quantidadeSelecionada) || 1, 1), 100);
+    const quantidade = Math.min(
+      Math.max(Number(quantidadeSelecionada) || 1, 1),
+      100,
+    );
+
     const carrinhoAtual = JSON.parse(
       localStorage.getItem("potenze_carrinho") || "[]",
     );
@@ -21,7 +25,7 @@ function AvaliaProduto() {
     if (itemExistente) {
       const carrinhoAtualizado = carrinhoAtual.map((item) =>
         item.id === product.nome
-          ? { ...item, quantidade: item.quantidade + quantidadeSelecionada }
+          ? { ...item, quantidade: item.quantidade + quantidade }
           : item,
       );
       localStorage.setItem(
@@ -34,7 +38,7 @@ function AvaliaProduto() {
         nome: product.nome,
         modelo: product.modelo,
         imagem: product.imagem,
-        quantidade: quantidadeSelecionada,
+        quantidade: quantidade,
         potencia: potenciaSelecionada,
       };
       localStorage.setItem(
@@ -72,9 +76,9 @@ function AvaliaProduto() {
   return (
     <div className="min-h-screen bg-zinc-100 px-6 py-10 font-sans text-zinc-900 dark:bg-[#303030] dark:text-[#fffafa]">
       <div className="mx-auto max-w-6xl">
-        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.95fr] items-start">
-          <section className="rounded-[32px] border border-red-700 bg-white p-6 shadow-sm">
-            <div className="h-[320px] overflow-hidden rounded-[28px] bg-zinc-100 p-6">
+        <div className="grid gap-10 lg:grid-cols-[1.2fr_0.95fr] items-stretch">
+          <section className="rounded-[32px] border border-red-700 bg-white dark:bg-[#1f1f1f] p-6 shadow-sm">
+            <div className="h-full overflow-hidden rounded-[28px] bg-zinc-100 dark:bg-[#303030] p-6">
               <img
                 src={product.imagem}
                 alt={product.nome}
@@ -84,7 +88,7 @@ function AvaliaProduto() {
           </section>
 
           <section className="rounded-3xl border border-red-700 bg-white p-6 shadow-sm dark:bg-[#1f1f1f]">
-            <div className="flex h-full flex-col justify-between gap-6 text-center">
+            <div className="flex h-full flex-col justify-between gap-6 text-center bg-zinc-100 p-6 rounded-2xl dark:bg-[#303030]">
               <div className="space-y-3">
                 <h1 className="text-4xl font-bold text-zinc-900 dark:text-[#fffafa]">
                   {product.nome}
@@ -131,9 +135,9 @@ function AvaliaProduto() {
                   Em estoque
                 </p>
 
-                <div className="flex w-full flex-wrap items-center justify-between gap-4">
+                <div className="flex w-full flex-wrap md:flex-row md:items-center md:justify-between gap-4">
                   {/* 1. Label de Quantidade (Lado Esquerdo) */}
-                  <label className="flex w-full max-w-xs items-center justify-between rounded-full border border-zinc-200 bg-zinc-100 px-4 py-3 text-sm text-zinc-700 dark:border-zinc-700 dark:bg-[#1f1f1f]">
+                  <label className="flex w-full md:w-auto md:flex-1 max-w-xs items-center justify-between rounded-full border border-zinc-200 bg-zinc-100 px-4 py-3 text-sm text-zinc-700 dark:border-zinc-700 dark:bg-[#1f1f1f]">
                     <span className="text-zinc-700 dark:text-zinc-300">
                       Quantidade:
                     </span>
@@ -204,7 +208,6 @@ function AvaliaProduto() {
               </div>
             </div>
           </section>
-          
         </div>
 
         <h1 className="mt-2 text-4xl font-bold mt-5">
@@ -232,16 +235,21 @@ function AvaliaProduto() {
           })}
         </div>
 
-        <h1 className="mt-2 text-4xl font-bold mt-5">
-          Destaques
-        </h1>
-        
+        <h1 className="mt-2 text-4xl font-bold mt-5">Destaques</h1>
+
         {destaques.length > 0 && (
           <div className="mt-10 space-y-4">
             {destaques.map((item) => (
-              <div key={item.texto} className="flex gap-4 rounded-3xl border border-zinc-200 bg-white p-4">
+              <div
+                key={item.texto}
+                className="flex gap-4 rounded-3xl border border-zinc-200 bg-white p-4"
+              >
                 {item.imagem && (
-                  <img src={item.imagem} alt={item.texto} className="h-full w-full object-contain" />
+                  <img
+                    src={item.imagem}
+                    alt={item.texto}
+                    className="h-full w-full object-contain"
+                  />
                 )}
               </div>
             ))}
