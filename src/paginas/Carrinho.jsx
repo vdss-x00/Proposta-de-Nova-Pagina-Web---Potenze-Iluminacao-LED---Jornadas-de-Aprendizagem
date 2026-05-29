@@ -81,6 +81,14 @@ function Carrinho() {
                     <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
                       {item.modelo}
                     </p>
+                    {item.potencia && (
+                      <p className="mt-1 text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                        Potência:{" "}
+                        <span className="text-[#8f1a22] font-semibold dark:text-red-400">
+                          {item.potencia}
+                        </span>
+                      </p>
+                    )}
                     <p className="mt-2 text-sm font-semibold text-zinc-900 dark:text-[#fffafa]">
                       Quantidade: {item.quantidade}
                     </p>

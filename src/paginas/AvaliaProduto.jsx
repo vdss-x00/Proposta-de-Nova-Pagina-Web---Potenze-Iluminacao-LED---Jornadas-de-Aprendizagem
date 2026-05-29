@@ -25,7 +25,7 @@ function AvaliaProduto() {
     if (itemExistente) {
       const carrinhoAtualizado = carrinhoAtual.map((item) =>
         item.id === product.nome
-          ? { ...item, quantidade: item.quantidade + quantidade }
+          ? { ...item, quantidade: item.quantidade + quantidade, potencia: potenciaSelecionada }
           : item,
       );
       localStorage.setItem(
