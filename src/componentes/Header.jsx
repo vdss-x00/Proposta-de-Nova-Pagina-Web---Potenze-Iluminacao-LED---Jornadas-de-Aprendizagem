@@ -115,7 +115,7 @@ function Header() {
           <div className="flex items-center gap-6 max-[782px]:hidden">
             <Link to="/carrinho">
               <button
-                className="relative text-zinc-900 cursor-pointer dark:text-[#fffafa]"
+                className="relative text-zinc-900 cursor-pointer dark:text-[#fffafa] hover:bg-[#8f1a22] hover:text-white rounded-[10px] p-1 transition-colors"
                 aria-label="Carrinho"
               >
                 <svg

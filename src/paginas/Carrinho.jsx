@@ -62,7 +62,7 @@ function Carrinho() {
               >
                 <button
                   onClick={() => removerItem(item.id)}
-                  className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded bg-[#8f1a22] text-sm font-bold text-white cursor-pointer"
+                  className="absolute right-2 top-2 flex h-7 w-7 items-center justify-center rounded bg-[#8f1a22] text-sm font-bold text-white cursor-pointer hover:bg-[#7a1019] transition-colors"
                   aria-label="Remover item"
                 >
                   X

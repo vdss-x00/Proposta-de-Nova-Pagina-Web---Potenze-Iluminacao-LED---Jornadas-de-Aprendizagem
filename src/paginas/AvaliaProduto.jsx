@@ -5,6 +5,7 @@ function AvaliaProduto() {
   const location = useLocation();
   const product = location.state?.product;
   const [quantidadeSelecionada, setQuantidadeSelecionada] = useState(1);
+  const [botaoDesativado, setBotaoDesativado] = useState(false);
   const [potenciaSelecionada, setPotenciaSelecionada] = useState(
     product?.potencias?.[0] || "",
   );
@@ -25,7 +26,11 @@ function AvaliaProduto() {
     if (itemExistente) {
       const carrinhoAtualizado = carrinhoAtual.map((item) =>
         item.id === product.nome
-          ? { ...item, quantidade: item.quantidade + quantidade, potencia: potenciaSelecionada }
+          ? {
+              ...item,
+              quantidade: item.quantidade + quantidade,
+              potencia: potenciaSelecionada,
+            }
           : item,
       );
       localStorage.setItem(
@@ -48,6 +53,7 @@ function AvaliaProduto() {
     }
 
     window.dispatchEvent(new Event("cartUpdated"));
+    setBotaoDesativado(true);
   };
 
   const especificacoes = product.especificacoes || [];
@@ -148,11 +154,12 @@ function AvaliaProduto() {
                       value={quantidadeSelecionada}
                       onChange={(event) => {
                         const value = Number(event.target.value);
-                        setQuantidadeSelecionada(
-                          Number.isNaN(value)
-                            ? 1
-                            : Math.min(Math.max(value, 1), 100),
-                        );
+                        const novaQuantidade = Number.isNaN(value)
+                          ? 1
+                          : Math.min(Math.max(value, 1), 100);
+
+                        setQuantidadeSelecionada(novaQuantidade);
+                        setBotaoDesativado(false);
                       }}
                       className="w-20 rounded-full border border-zinc-300 bg-white px-3 py-2 text-right text-sm text-zinc-900 outline-none focus:border-[#9f1523] focus:ring-2 focus:ring-[#9f1523]/20"
                     />
@@ -189,7 +196,12 @@ function AvaliaProduto() {
 
                   <button
                     onClick={adicionarAoCarrinho}
-                    className="inline-flex items-center justify-center gap-2 rounded-full border border-red-700 bg-[#9f1523] px-4 py-2 text-sm font-semibold text-white hover:bg-[#7a1019]"
+                    disabled={botaoDesativado}
+                    className={`inline-flex items-center justify-center gap-2 rounded-full border border-red-700 px-4 py-2 text-sm font-semibold text-white ${
+                      botaoDesativado
+                        ? "bg-[#2b070a] cursor-not-allowed"
+                        : "bg-[#9f1523] hover:bg-[#7a1019]"
+                    }`}
                   >
                     Adicionar ao Carrinho
                     <svg
@@ -209,13 +221,11 @@ function AvaliaProduto() {
             </div>
           </section>
         </div>
-        
+
         <h1 className="mt-6 text-4xl font-bold mt-5">Descrição</h1>
         <p className="mt-4 mb-8 text-lg text-zinc-700 dark:text-zinc-300">
           {product.descricao}
         </p>
-
-
 
         <h1 className="mt-2 text-4xl font-bold mt-5">
           Especificações do Produto
@@ -241,9 +251,6 @@ function AvaliaProduto() {
             );
           })}
         </div>
-
-
-        
       </div>
     </div>
   );
