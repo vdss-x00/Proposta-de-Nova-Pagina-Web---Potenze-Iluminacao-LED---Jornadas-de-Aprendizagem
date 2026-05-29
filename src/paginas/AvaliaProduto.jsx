@@ -102,16 +102,6 @@ function AvaliaProduto() {
                 <h2 className="text-xl font-semibold text-zinc-600 dark:text-zinc-300">
                   {product.modelo}
                 </h2>
-
-                <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-                  <div className=" inline-block p-1 bg-[#d9d9d9] text-zinc-900">
-                    <p>{product.garantia}</p>
-                  </div>
-
-                  <div className=" inline-block p-1 bg-zinc-100 dark:bg-[#303030]">
-                    <p>Proteção IP69K</p>
-                  </div>
-                </div>
               </div>
 
               <div className="w-full rounded-2xl bg-zinc-100 p-4 text-left dark:bg-[#303030]">
