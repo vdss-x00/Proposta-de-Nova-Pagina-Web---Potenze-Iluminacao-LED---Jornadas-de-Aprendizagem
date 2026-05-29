@@ -209,6 +209,13 @@ function AvaliaProduto() {
             </div>
           </section>
         </div>
+        
+        <h1 className="mt-6 text-4xl font-bold mt-5">Descrição</h1>
+        <p className="mt-4 mb-8 text-lg text-zinc-700 dark:text-zinc-300">
+          {product.descricao}
+        </p>
+
+
 
         <h1 className="mt-2 text-4xl font-bold mt-5">
           Especificações do Produto
@@ -235,26 +242,8 @@ function AvaliaProduto() {
           })}
         </div>
 
-        <h1 className="mt-2 text-4xl font-bold mt-5">Destaques</h1>
 
-        {destaques.length > 0 && (
-          <div className="mt-10 space-y-4">
-            {destaques.map((item) => (
-              <div
-                key={item.texto}
-                className="flex gap-4 rounded-3xl border border-zinc-200 bg-white p-4"
-              >
-                {item.imagem && (
-                  <img
-                    src={item.imagem}
-                    alt={item.texto}
-                    className="h-full w-full object-contain"
-                  />
-                )}
-              </div>
-            ))}
-          </div>
-        )}
+        
       </div>
     </div>
   );
