@@ -6,6 +6,7 @@ import Sobre from "./paginas/Sobre.jsx";
 import Contato from "./paginas/Contato.jsx";
 import Home from "./paginas/Home.jsx";
 import AvaliaProduto from "./paginas/AvaliaProduto.jsx";
+import ConfirmaOrcamento from "./paginas/ConfirmaOrcamento.jsx";
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="orcamento" element={<Orcamento />} />
         <Route path="carrinho" element={<Carrinho />} />
         <Route path="contato" element={<Contato />} />
+        <Route path="ConfirmaOrcamento" element={<ConfirmaOrcamento />} />
       </Route>
     </Routes>
   );

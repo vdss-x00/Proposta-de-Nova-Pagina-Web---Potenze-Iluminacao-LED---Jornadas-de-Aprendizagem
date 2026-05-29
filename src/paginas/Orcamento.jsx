@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function Orcamento() {
   const [aceitoTermos, setAceitoTermos] = useState(false);
@@ -226,6 +227,7 @@ function Orcamento() {
             </label>
 
             <div className="flex justify-center md:col-span-2">
+              <Link to="/ConfirmaOrcamento">
               <button
                 type="submit"
                 disabled={!aceitoTermos}
@@ -233,6 +235,7 @@ function Orcamento() {
               >
                 Enviar
               </button>
+              </Link>
             </div>
           </form>
         </div>
