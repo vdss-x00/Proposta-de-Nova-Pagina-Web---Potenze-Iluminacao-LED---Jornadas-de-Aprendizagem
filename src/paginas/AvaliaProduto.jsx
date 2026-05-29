@@ -100,7 +100,7 @@ function AvaliaProduto() {
 
             <div className="flex flex-col items-center justify-center gap-[4px] sm:flex-row">
               <label className="flex w-full max-w-xs items-center justify-between rounded-full border border-zinc-200 bg-zinc-100 px-4 py-3 text-sm text-zinc-700 dark:border-zinc-700 dark:bg-[#1f1f1f]">
-                <span>Quantidade:</span>
+                <span className="text-zinc-700 dark:text-zinc-300">Quantidade:</span>
                 <input
                   type="number"
                   min="1"
