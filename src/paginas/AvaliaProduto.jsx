@@ -98,7 +98,7 @@ function AvaliaProduto() {
                 </h2>
 
                 <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-                  <div className=" inline-block p-1 bg-zinc-100 dark:bg-[#303030]">
+                  <div className=" inline-block p-1 bg-[#d9d9d9] text-zinc-900">
                     <p>{product.garantia}</p>
                   </div>
 
