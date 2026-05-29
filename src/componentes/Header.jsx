@@ -54,42 +54,39 @@ function Header() {
                 <span className="mt-1 inline-block h-0 w-0 border-l-[7px] border-r-[7px] border-t-8 border-l-transparent border-r-transparent border-t-red-800" />
               </Link>
               <div className="flex flex-col w-50 anim-hov">
-                <a
-                  href="#"
-                  className="bg-[#d9d9d9] border-t-[#8f1a22] hover:bg-[#320d0a] hover:text-white"
-                >
+                <Link to="/produtos?categoria=highbay" className="bg-[#d9d9d9] border-t-[#8f1a22] hover:bg-[#320d0a] hover:text-white">
                   High Bay
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/produtos?categoria=refletores"
                   className="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white"
                 >
                   Refletores
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/produtos?categoria=ex"
                   className="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white"
                 >
                   EX
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/produtos?categoria=industriais"
                   className="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white"
                 >
                   Industriais
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/produtos?categoria=iluminacao-publica"
                   className="bg-[#d9d9d9] hover:bg-[#320d0a] hover:text-white"
                 >
                   Iluminação Pública
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  to="/produtos?categoria=lineares"
                   className="bg-[#d9d9d9] border-b-[#8f1a22] border-b-2 hover:bg-[#320d0a] hover:text-white"
                 >
                   Lineares
-                </a>
+                </Link>
               </div>
             </div>
             <Link

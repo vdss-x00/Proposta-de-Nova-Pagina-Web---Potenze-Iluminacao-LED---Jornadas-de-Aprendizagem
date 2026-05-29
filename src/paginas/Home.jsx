@@ -257,16 +257,16 @@ function Home() {
             {ofertas.slice(0, 3).map((oferta) => (
               <article
                 key={oferta.nome}
-                className="flex h-full min-h-[36rem] flex-col rounded-2xl border border-red-700 bg-white p-5 shadow-sm"
+                className="flex h-full min-h-[36rem] flex-col rounded-2xl border border-red-700 bg-{currentColor} text-{currentColor} p-5 shadow-sm"
               >
-                <div className="mb-4 flex h-52 items-center justify-center rounded-xl">
+                <div className="mb-4 flex h-52 items-center justify-center rounded-xl text-{currentColor}">
                   <img
                     src={oferta.imagem}
                     alt={oferta.nome}
                     className="h-full w-full object-contain object-center"
                   />
                 </div>
-                <h3 className="min-h-[6.5rem] text-[2.5rem] font-bold leading-tight text-zinc-900 dark:text-zinc-900">
+                <h3 className="min-h-[6.5rem] text-[2.5rem] font-bold leading-tight">
                   {oferta.nome}
                 </h3>
                 <ul className="mt-3 min-h-[5.25rem] space-y-1.5 text-[1.05rem] leading-snug text-zinc-600">
@@ -277,8 +277,9 @@ function Home() {
                 <Link
                   to={`/avalia-produto/${oferta.nome.toLowerCase().replace(/\s+/g, "-")}`}
                   state={{ product: oferta }}
+                  className="mt-auto"
                 >
-                  <button className="mt-auto w-fit rounded-2xl bg-red-800 px-8 py-2 text-[2rem] leading-none text-white cursor-pointer hover:bg-red-700">
+                  <button className="w-fit rounded-2xl bg-red-800 px-8 py-2 text-[2rem] leading-none text-white cursor-pointer hover:bg-red-700">
                     Ver Oferta
                   </button>
                 </Link>

@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import HighBay from "../assets/high_bay.png";
 import Refletor from "../assets/refletor_ultra.png";
 import EX from "../assets/luminaria_ex.png";
@@ -35,7 +34,7 @@ function Produtos() {
         "Lúmens: 1.735lm | 3.470lm",
       ],
       imagem: Industriais,
-      filtro: "Industriais",
+      filtro: "industriais",
       modelo: "Modelo PZ-IND",
       especificacoes: [
         { label: "Potência", value: "15W a 30W" },
@@ -74,7 +73,7 @@ function Produtos() {
         { label: "Grau de Resistência", value: "IK08" },
       ],
       imagem: Refletor,
-      filtro: "Refletores",
+      filtro: "refletores",
       modelo: "Modelo PZ-ULTRA",
       potencias: [
         "50W",
@@ -112,7 +111,7 @@ function Produtos() {
         { label: "Grau de Resistência", value: "IK08" },
       ],
       imagem: HighBay,
-      filtro: "High Bay",
+      filtro: "highbay",
       modelo: "Modelo PZ-HIGH",
       potencias: ["100W", "150W", "200W"],
       garantia: "5 Anos de Garantia",
@@ -144,7 +143,7 @@ function Produtos() {
         { label: "Grau de Resistência", value: "IK08" },
       ],
       imagem: highBayModular,
-      filtro: "High Bay",
+      filtro: "highbay",
       modelo: "Modelo PZ-ULTRA HB",
       potencias: ["50W", "100W", "150W", "200W", "300W"],
       garantia: "5 Anos de Garantia",
@@ -176,7 +175,7 @@ function Produtos() {
         { label: "Grau de Resistência", value: "IK08" },
       ],
       imagem: linearIp66,
-      filtro: "Lineares",
+      filtro: "lineares",
       modelo: "Modelo PZ-HE",
       potencias: ["20W", "40W", "50W", "60W"],
       garantia: "3 Anos de Garantia",
@@ -207,7 +206,7 @@ function Produtos() {
         { label: "Grau de Resistência", value: "IK08" },
       ],
       imagem: Lineares,
-      filtro: "Lineares",
+      filtro: "lineares",
       modelo: "Modelo PZ-HE IP",
       potencias: ["20W", "40W", "50W", "60W"],
       garantia: "3 Anos de Garantia",
@@ -238,7 +237,7 @@ function Produtos() {
         { label: "Grau de Resistência", value: "IK08" },
       ],
       imagem: luminariaDeco,
-      filtro: "Iluminação Pública",
+      filtro: "iluminacao-publica",
       modelo: "Modelo PZ-DECOR",
       potencias: ["50W", "70W", "100W"],
       garantia: "5 Anos de Garantia",
@@ -258,7 +257,7 @@ function Produtos() {
         "Lúmens: 1.735lm | 3.470lm",
       ],
       imagem: EX,
-      filtro: "EX",
+      filtro: "ex",
       modelo: "Modelo PZ-EX",
       especificacoes: [
         { label: "Potência", value: "15W a 30W" },
@@ -289,7 +288,7 @@ function Produtos() {
         "Lúmens: 1.735lm | 3.470lm",
       ],
       imagem: luminariaFrigorifico,
-      filtro: "Industriais",
+      filtro: "industriais",
       modelo: "Modelo PZ-FRIG",
       especificacoes: [
         { label: "Potência", value: "15W a 30W" },
@@ -335,7 +334,7 @@ function Produtos() {
         { label: "Grau de Resistência", value: "IK08" },
       ],
       imagem: IlumPubli,
-      filtro: "Iluminação Pública",
+      filtro: "iluminacao-publica",
       modelo: "Modelo PZ-PUBLIC",
       potencias: ["55W", "75W", "100W", "150W", "200W"],
       garantia: "5 Anos de Garantia",
@@ -348,16 +347,27 @@ function Produtos() {
         privadas, praças, parques e estacionamentos.`,
     },
   ];
-  const [activeIndex, setActiveIndex] = useState(null);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const categoria = searchParams.get("categoria");
 
   const botoes = [
-    { img: HighBay, label: "High Bay" },
-    { img: Refletor, label: "Refletores" },
-    { img: EX, label: "EX" },
-    { img: Industriais, label: "Industriais" },
-    { img: IlumPubli, label: "Iluminação Pública" },
-    { img: Lineares, label: "Lineares" },
+    { img: HighBay, label: "High Bay", slug: "highbay" },
+    { img: Refletor, label: "Refletores", slug: "refletores" },
+    { img: EX, label: "EX", slug: "ex" },
+    { img: Industriais, label: "Industriais", slug: "industriais" },
+    { img: IlumPubli, label: "Iluminação Pública", slug: "iluminacao-publica" },
+    { img: Lineares, label: "Lineares", slug: "lineares" },
   ];
+
+  const handleCategoryClick = (slug) => {
+    if (categoria === slug) {
+      setSearchParams({}); // reset parameter to show all products
+    } else {
+      setSearchParams({ categoria: slug });
+    }
+  };
 
   const parceiros = Object.entries(parceirosRaw)
     .sort(([pathA], [pathB]) =>
@@ -369,9 +379,13 @@ function Produtos() {
     }));
 
   const parceirosDesktop = chunkArray(parceiros, 9);
-  const activeFilter = activeIndex !== null ? botoes[activeIndex].label : null;
-  const filteredOfertas = activeFilter
-    ? ofertas.filter((oferta) => oferta.filtro === activeFilter)
+  const activeIndex = botoes.findIndex(
+  (botao) => botao.slug === categoria
+);
+
+const activeFilter = activeIndex !== -1 ? botoes[activeIndex].label : null;
+  const filteredOfertas = categoria
+    ? ofertas.filter((oferta) => oferta.filtro === categoria)
     : ofertas;
 
   return (
@@ -382,28 +396,33 @@ function Produtos() {
         </h2>
 
         <section className="grid w-full grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-6 justify-items-center mb-16 dark:text-[#fffafa]">
-          {botoes.map((botao, index) => (
-            <button
-              key={index}
-              onClick={() => setActiveIndex(index)}
-              className="cursor-pointer w-full max-w-[180px] flex flex-col items-center"
-            >
-              <div
-                className={`inline-block border-[#d9d9d9] border-3 rounded-[20px] overflow-hidden p-3 transition-colors ${
-                  activeIndex === index ? "bg-[#8f1a22]" : "bg-transparent"
-                }`}
+          {botoes.map((botao, index) => {
+            const isButtonActive = categoria === botao.slug;
+            return (
+              <button
+                key={index}
+                onClick={() => handleCategoryClick(botao.slug)}
+                className="cursor-pointer w-full max-w-[180px] flex flex-col items-center"
               >
-                <img
-                  src={botao.img}
-                  alt={botao.label}
-                  className="w-[140px] h-[140px] object-contain"
-                />
-              </div>
-              <p className="font-thin mt-2 text-[20px] text-center">
-                {botao.label}
-              </p>
-            </button>
-          ))}
+                <div
+                  className={`inline-block border-[#d9d9d9] border-3 rounded-[20px] overflow-hidden p-3 transition-colors ${
+                    isButtonActive
+                      ? "bg-[#8f1a22]"
+                      : "bg-transparent"
+                  }`}
+                >
+                  <img
+                    src={botao.img}
+                    alt={botao.label}
+                    className="w-[140px] h-[140px] object-contain"
+                  />
+                </div>
+                <p className="font-thin mt-2 text-[20px] text-center">
+                  {botao.label}
+                </p>
+              </button>
+            );
+          })}
         </section>
 
         <div className="grid gap-5 justify-items-center md:grid-cols-2 lg:grid-cols-3">
