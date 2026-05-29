@@ -269,7 +269,7 @@ function Home() {
                 <h3 className="min-h-[6.5rem] text-[2.5rem] font-bold leading-tight">
                   {oferta.nome}
                 </h3>
-                <ul className="mt-3 min-h-[5.25rem] space-y-1.5 text-[1.05rem] leading-snug text-zinc-600">
+                <ul className="mt-3 min-h-[5.25rem] space-y-1.5 text-[1.05rem] leading-snug text-zinc-500 dark:text-zinc-300">
                   {oferta.detalhes.map((detalhe) => (
                     <li key={detalhe}>{detalhe}</li>
                   ))}

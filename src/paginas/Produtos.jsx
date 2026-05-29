@@ -441,7 +441,7 @@ const activeFilter = activeIndex !== -1 ? botoes[activeIndex].label : null;
               <h3 className="min-h-[5.5rem] text-[2rem] font-bold leading-tight">
                 {oferta.nome}
               </h3>
-              <ul className="mt-3 min-h-[5.25rem] space-y-1.5 text-[1.05rem] leading-snug text-zinc-600">
+              <ul className="mt-3 min-h-[5.25rem] space-y-1.5 text-[1.05rem] leading-snug text-zinc-600 dark:text-zinc-300">
                 {oferta.detalhes.map((detalhe) => (
                   <li key={detalhe}>{detalhe}</li>
                 ))}
@@ -449,7 +449,7 @@ const activeFilter = activeIndex !== -1 ? botoes[activeIndex].label : null;
               <Link
                 to={`/avalia-produto/${index}`}
                 state={{ product: oferta }}
-                className="mt-6 self-start inline-flex rounded-full border border-red-700 px-4 py-2 text-sm font-semibold text-red-700 hover:bg-red-700 hover:text-white"
+                className="mt-auto inline-flex rounded-full border border-red-700 px-4 py-2 text-sm font-semibold text-red-700 hover:bg-red-700 hover:text-white text-center"
               >
                 Ver Oferta
               </Link>
